@@ -438,6 +438,12 @@ body {
   float: right;
   margin-right: -15px;
 }
+#nav-linkedin-link:before {
+  content: "\f0e1";
+}
+#nav-github-link:before {
+  content: "\f113";
+}
 #nav-rss-link:before {
   content: "\f09e";
 }
