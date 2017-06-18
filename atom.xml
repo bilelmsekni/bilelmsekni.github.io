@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mseknibilel.github.io/"/>
-  <updated>2017-06-18T12:52:25.856Z</updated>
+  <updated>2017-06-18T12:56:47.895Z</updated>
   <id>https://mseknibilel.github.io/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Waterfall is that you?</title>
+    <link href="https://mseknibilel.github.io/2017/06/18/waterfall-is-that-you/"/>
+    <id>https://mseknibilel.github.io/2017/06/18/waterfall-is-that-you/</id>
+    <published>2017-06-18T12:56:47.000Z</published>
+    <updated>2017-06-18T12:56:47.895Z</updated>
+    
+    <content type="html"><![CDATA[<p>IT projects have some similarities with industrial ones like budgets, deadlines but also have its differences like its flowness and unpredictable complexity. Many ways exist today to drive this kind of projects, perhaps the most used one is Waterfall methodology. It has been the standard for managing software development projects since it’s creation in the mid 20th century. However, the outcome was very disappointing.<br><a id="more"></a></p>
+<div class="figure nocaption center" style="width:;"><img class="fig-img" src="http://i.imgur.com/Ay5FeM4.png" alt=""></div>
+<p>Less than 26% of projects were successful according to the chaos report by the Standish Group. More than 70 % was either challenged (budget excess, descoping requirements, …) or simply failed. This was a call for change to a better way. Agile methodology came to the world in february 2001 after publishing lightweight development methods known as the Manifesto for Agile Software Development.<br>It took it some time but eventually agile was considered as a serious alternative to waterfall. Agile’s most used implementation Scrum was introduced by Ken Schwaber and Jeff Sutherland as an agile framework made of 3 simple concepts: events, roles and artifacts. If used correctly, Scrum can raise team performance, minimize risk and enhance return on investment (ROI). However changing to scrum is bit more difficult than people think, many obstacles can slow this transformation and perhaps even give birth to a hybrid agile waterfall methodology.<br> So how was this new concept embraced ? Is there a danger if it’s wrongfully applied? And how should the real scrum be?</p>
+<p> Most teams today claim they are agile or at least they want to be but they are actually not.<br>Why? Because applying scrum is not easy especially when you have tons of processes and traditions like in big companies. There are many symptoms to this scrum illusion. First, decorating the old process symptom, most teams tend to rename old ceremonies using scrum words to make it sound “scrumish”. For instance, report status meeting is transformed into daily meeting, team meeting is used for retrospectives, … Well, it’s a good step toward scrum but it’s not enough. The content of the meeting, its attendees still need to change if we want to work in scrum. For example, daily meetings should be informative short meeting to discuss day to day plans and check progress between scrum master, dev team and product owner. It’s not about reporting to the manager, or discussing a technical solution.</p>
+<p>Second symptom is the role confusion. In scrum, only three roles exist: Product owner, scrum master and dev team. However, in these teams, you still hear about team leader, project manager, deputy team leader, …because the company process didn’t change when she adapted scrum. This is a real obstacle because it holds scrum from achieving its goal by building a cross functional, autonomous and self organizing team. Team leader, business analyst, senior developer, database administrator,  QA … they form all together the dev team to work in cooperation and create a product that meets the product owner’s expectations. For example, instead of having a team of business analysts working seperatly to write specifications therefore creating an intermediate layer between the developers and product owners, they should be integrated within dev teams to work closely with developers, QAs to better understand product requirements and figure out the best way to meet them.</p>
+<p> Changing to Scrum leads to a changing the management culture from decisions created by top executives  and executed by the team to decisions made by the team members and validated by executives reflecting a real flat hierarchy where everyone’s opinion matters. This doesn’t mean loss of authority but more about cooperation rather than ordering. It’s necessary to form employees about their new role, how it’s really about complementing and not in conflicting with others.<br>The last symptom is known by my PO is MIA or when product owner doesn’t attend scrum events, takes a long time before giving feedbacks and doesn’t accept estimation in complexity points. This usually happens when the product owner is high level management that simply does not have the time to be with the team or he is not really into the scrum process. In both cases, it creates a negative impact on the team because they can’t understand correclty the required features, get feedbacks regularly and the worst thing is using time estimations.<br>Estimating a task in time is guessing how much time it needs to be done. This method is known for its ineffecienty and cause of frustration due to micro-management. In scrum, estimation is about complexity rather than time. It’s really hard to predict time estimation of a given task because factors like performance, design, tests … are not obvious in the beginning. Unfortunatly, this is a bit difficult to accept by some product owners because unlike time estimation, complexity estimation can’t be translated to cost which means fear from budget excess or feature descoping. This type of product owners are more used to waterfall methodology where they try to push every possible feature they can think of before closing the contract. Time has proven how wrong this approach is in the software development industry. Time framing features often leads to bad quality products, missed deadlines and budget excess.<br>The agile manifesto states customer collaboration over contract negociation where the customer sorts his features by most added value to create the product backlog. He then meets with the dev team to define which items the team plans to deliver during the sprint according to the team velocity. Finally, he works closely with the dev team by providing recurrent feedbacks about the product to make sure requirements are well understood. This cycle is repeated over and over until the end of the budget. Because the product owner chose to deliver his most prioritized items first, the outcame is always a high quality product with maximum ROI. It’s true that some features might be descoped but if this happens it’s not because a deadline was missed but because some other features were just more important to have.</p>
+<p>The product owner is a key role in scrum process and should not be taken lightly. It’s a full time job that includes prioritizing features, creating product backlogs and  providing feedbacks on product increments. There can only be one product owner, he might share some responsibility but decisions must come always from the lead product owner to avoid confusion and missunderstanding.</p>
+<p>These were the three symptoms describing an ill scrum process. It has been bent to make a better picture but not a better result. Scrum works and the chaos report above is the best proof for that, but if you really want to increase your performance and maximize your ROI, you should try to fully adapt scrum.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;IT projects have some similarities with industrial ones like budgets, deadlines but also have its differences like its flowness and unpredictable complexity. Many ways exist today to drive this kind of projects, perhaps the most used one is Waterfall methodology. It has been the standard for managing software development projects since it’s creation in the mid 20th century. However, the outcome was very disappointing.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="agile" scheme="https://mseknibilel.github.io/tags/agile/"/>
+    
+  </entry>
   
   <entry>
     <title>Who is this person so called scrum master?</title>
