@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mseknibilel.github.io/"/>
-  <updated>2017-06-18T10:18:11.348Z</updated>
+  <updated>2017-06-18T11:01:46.442Z</updated>
   <id>https://mseknibilel.github.io/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>7 Steps for professional code</title>
+    <link href="https://mseknibilel.github.io/2017/06/18/7-Steps-For-Professional-Code/"/>
+    <id>https://mseknibilel.github.io/2017/06/18/7-Steps-For-Professional-Code/</id>
+    <published>2017-06-18T11:01:46.000Z</published>
+    <updated>2017-06-18T11:01:46.442Z</updated>
+    
+    <content type="html"><![CDATA[<p>Yeah, i know … The first question that pops into your minds is: Doesn’t people get tired of writing this bla bla over and over again ?!! My Code is perfect and I don’t need no steps to tell me what to do and what not to do … Well , I believe that if our codes where so perfect we wouldn’t spend debugging it , creating break points and buying new keyboards !!<br>Come on, it won’t take you over 10 minutes to read and perhaps avoid looking like this.</p>
+<a id="more"></a>
+<div class="figure nocaption center" style="width:;"><img class="fig-img" src="http://i.imgur.com/nZ4zb0O.jpg" alt=""></div>
+<p><strong>Step 1 :</strong></p>
+<p>Initialize Initialize and Initialize!! Don’t leave your attributes and parameters naked like that; give them a value, a string or even a null!!<br>This will minimize the chance of throwing an unexpected exception from nowhere!</p>
+<p><strong>Step 2 :</strong></p>
+<p>Choose meaningful names for your attributes, methods and classes. This will be handy when your lines of code starts exploding like firecrackers on New Year’s Eve and especially it will make your code friendlier for your colleagues and will keep them from cursing you behind your back.</p>
+<p><strong>Step 3 :</strong></p>
+<p>Beware of the Copy/Paste, it might look like the most confortable times of your coding days but one simple type change, a same parameter name or even a missed parenthesis  will definitely ruin that day for you.</p>
+<p><strong>Step 4 :</strong></p>
+<p>Okay, I know that you are creative and enthusiastic but slow down dude, be wise too!!<br>Don’t start everything from scratch each time you face a new problem because that will increase the complexity of your work. Instead, take a deep breath, analyse your problem and compare it to what you have got. I am sure that you will end up by adapting something old to solve what’s new.</p>
+<p><strong>Step 5 :</strong></p>
+<p>Now, this is no longer the ice age people, we got tools, we got power and we got style! Don’t throw all that in the bin, use them wisely and effectively and you will see how much your coding life will be easier.<br>For cave people who don’t know what tools could be : I am talking about OOP , TDD, break points , stack trace , alerts , console messages , message boxes, …etc. And of course the thing inside your skull AKA the brain!</p>
+<p><strong>Step 6 :</strong></p>
+<p>What I have seen in similar articles is this : do not waste time writing fancy code , do not try to make your colleagues say “What the Hell ? “ , just write simple things and let the computer handle the unnecessary loops.<br>I agree with that but what if there is an opportunity to make our code smaller, elegant and more importantly robust, would we miss that opportunity just because we want to jump on the first obvious solution that could be wrong but our laziness is blinding us from seeing it?</p>
+<p><strong>Step 7 :</strong></p>
+<p>He is every coder‘s mentor, he is every researcher‘s heaven, he is our friend, our saviour and our idol …. He is www.google.com , for any problems just type in what you got and he will answer!</p>
+<p>I hope you like my advices and willing to follow them.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Yeah, i know … The first question that pops into your minds is: Doesn’t people get tired of writing this bla bla over and over again ?!! My Code is perfect and I don’t need no steps to tell me what to do and what not to do … Well , I believe that if our codes where so perfect we wouldn’t spend debugging it , creating break points and buying new keyboards !!&lt;br&gt;Come on, it won’t take you over 10 minutes to read and perhaps avoid looking like this.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="craftsmanship" scheme="https://mseknibilel.github.io/tags/craftsmanship/"/>
+    
+  </entry>
   
   <entry>
     <title>Agile estimation</title>
