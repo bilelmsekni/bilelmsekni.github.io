@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Random thoughts based on true stories">
+    <title>Agile estimation - Random thoughts based on true stories</title>
+    <meta name="author" content="Bilel Msekni">
+    
+    
+        <link rel="icon" href="https://mseknibilel.github.io/assets/images/favicon.ico">
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="Estimation is a very important part of scrum. It allows the team to evaluate how much work is needed to finish an item and therefore conclude what can be delivered next sprint. It also helps product o">
+<meta name="keywords" content="agile">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Agile estimation">
+<meta property="og:url" content="https://mseknibilel.github.io/2017/06/18/Agile-Estimation/index.html">
+<meta property="og:site_name" content="Random thoughts based on true stories">
+<meta property="og:description" content="Estimation is a very important part of scrum. It allows the team to evaluate how much work is needed to finish an item and therefore conclude what can be delivered next sprint. It also helps product o">
+<meta property="og:image" content="http://i.imgur.com/UqSjuq8.png">
+<meta property="og:updated_time" content="2017-06-18T10:18:11.348Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Agile estimation">
+<meta name="twitter:description" content="Estimation is a very important part of scrum. It allows the team to evaluate how much work is needed to finish an item and therefore conclude what can be delivered next sprint. It also helps product o">
+<meta name="twitter:image" content="http://i.imgur.com/UqSjuq8.png">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/ed5737046d4b07d0ecac5e6d97d65dbe?s=640"/>
+    
+    
+        <meta property="og:image" content="http://i.imgur.com/UqSjuq8.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://i.imgur.com/UqSjuq8.png" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-sxklfps8ywgfyyjcowvnb4gxdgt0zjts3hsguljmv9uqanxjbnitrovtbrek.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-100772276-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="5">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">Random thoughts based on true stories</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://www.gravatar.com/avatar/ed5737046d4b07d0ecac5e6d97d65dbe?s=90" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="5">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/ed5737046d4b07d0ecac5e6d97d65dbe?s=110" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Bilel Msekni</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>I am a software engineer specialized in web development and agile practices</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/mseknibilel/" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://fr.linkedin.com/in/bilelmsekni/" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="mailto:msekni.bilel@gmail.com" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="5"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Agile estimation
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-06-18T12:05:14+02:00">
+	
+		    Jun 18, 2017
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Estimation is a very important part of scrum. It allows the team to evaluate how much work is needed to finish an item and therefore conclude what can be delivered next sprint. It also helps product owners prioritize their items by taking into consideration the required amount of work. An item that takes too much time to be done usually has a lesser priority than another that can be finished quickly. Estimating the right way is essential in scrum to get the best possible results.<br><a id="more"></a></p>
+<div class="figure nocaption center" style="width:;"><img class="fig-img" src="http://i.imgur.com/UqSjuq8.png" alt=""></div>
+<p>There are many techniques to estimate like story points, T-shirt size and time estimation. The latter is the most common method because it is well appreciated by top management.  It’s an easily understood parameter and can be converted to cost therefore gives more control on the project. This is incorrect because estimating in time gives inaccurate results due to the nature of software industry. Most new feature can be done using different methods so it’s not clear which one to choose at the beginning. Furthermore, bugs need to be analysed in order to find root causes. This investigation is hardly measurable in time because it depends on the complexity of the problem and the skills of the investigator. All these factors make time estimation hard thus planning poker ceremonies consume a lot of time which means attendees loss of focus and interest quickly. This is not the only frustrating thing, time estimation is a symbol of micro management. Managers tend to ask the agile team to time track their daily activities and sometimes they go furious if one item does not respect its estimation. This impacts negatively the team motivation (babysitting feeling, lack of trust) and make estimations higher than usual.</p>
+<p>The second method used for estimation is T-shirt size. It consists on estimating items according to their work amount: XS, S, M, L and XL. This makes estimation relatively easier and planning pokers shorter because it doesn’t require to spend lot time analysing solutions and voting options are limited. It’s sufficient to say this item is small or that item is medium in order to assign it to category and move to the next item. The results are more accurate if taken from a category point of view but from a more granular perspective some items might consume more time than it was estimated for therefore reducing the accuracy of team velocity. Comparing items becomes also complicated because there is no clear mathematical relationship between extra small and large.</p>
+<p>The last method for estimation is story point estimation. The goal of this technique is to assign a number of points to every task based on the complexity. For example, a complicated story will have more points than a simpler one. This approach helps the dev team to focus on how difficult is the problem from a technical point of view rather than how much time needed to accomplish the task. Poker plannings don’t take too much time because it’s a complexity evaluation (not a solution discussion) and voting choice is limited. In addition, stories can be compared based on the number of assigned points making velocity more accurate since it is the sum of all story points. Furthermore, this technique helps management predict when an item will be delivered. For instance, if a team velocity is equal to 15 and the backlog has items with following estimated complexity points: 5, 3, 5, 2, 7. The last item with 7 points will be delivered on the next sprint because the current one is full (5+3+5+2 = 15). If the sprint duration is equal to 2 weeks than the item should be delivered in 2 weeks. This method is pretty efficient when coming to drawing charts about the product progress and planning.</p>
+<p>Although scrum recommends this method for estimation, it’s the least used one because it’s not well understood. Let’s dive deeper in this concept :</p>
+<p>Estimating in story points is about guessing how complex the task is. It’s a total abstraction from time. This abstraction is unfortunately confused with the fact that developers might seize the opportunity to spend more time than required on a specific item therefore plumbing productivity performance. Although this is true, it’s sure not the fault of story points method but laziness. Lazy people will always find an excuse even if their tasks are time boxed. The fear of budget depletion is totally understood but it should not be an excuse to time track every single activity. Like mentioned earlier, time tracking is a sign of lack of trust and micro-management. A better approach will be to trust in the dev team. Giving them power to self-organize also means giving them the responsibility to deliver requested feature while respecting deadlines.</p>
+<p>Moving to story points estimation is not difficult, it can be started in parallel run mode to determine  the average team velocity. The difficult part in my opinion is to convince product owner and stakeholders about the advantages of this method. One should start with by explaining the nature of software industry and its challenges (difficult predictability, technical and functional environments). Furthermore, he should talk about how being agile means focusing on the current situation and the near future. This means that the far away future of the product is uncertain and vague but isn’t it already ? The faraway future can’t be predicted because factors change all the time so there is no need to spend too much time analysing opportunities that might not come. It’s understood that every manager would like to guarantee the success of his project but success doesn’t mean that every feature they have in mind must be delivered before the budget runs out because no one knows when the budget will really run out (budget cuts, more investments, …). The truth is success means that at the end of every sprint, the delivered product has the highest added value possible which means that managers should focus more on prioritizing their features based on their added value and worry less about the future. If applied correctly, the best insurance managers have against failure is that they can pull the plug on the project anytime and still get the best outcome possible.</p>
+<p>Finally, adopting scrum and agile isn’t as easy as some people think. Velocity is a fragile factor that depends on many elements. Following KPIs must be done regularly to increase the team production. What agile believes in is that this trust motivate people and engages them even more in the process. Thinking people work better when their activities are time tracked daily will make them work more is absurd. People produce more and better when they feel involved and trusted.</p>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/agile/">agile</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 Bilel Msekni. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                    <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                    <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                    <i class="fa fa-google-plus"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/ed5737046d4b07d0ecac5e6d97d65dbe?s=110" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Bilel Msekni</h4>
+        
+            <div id="about-card-bio"><p>I am a software engineer specialized in web development and agile practices</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Software craftsman</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                France, Paris
+            </div>
+        
+    </div>
+</div>
+
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                            <img class="media-image" src="http://i.imgur.com/UqSjuq8.png" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                            <h3 class="media-heading">Agile estimation</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 18, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>Estimation is a very important part of scrum. It allows the team to evaluate how much work is needed to finish an item and therefore conclude what can be delivered next sprint. It also helps product owners prioritize their items by taking into consideration the required amount of work. An item that takes too much time to be done usually has a lesser priority than another that can be finished quickly. Estimating the right way is essential in scrum to get the best possible results.<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                1 post found
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://mseknibilel.github.io/2017/06/18/Agile-Estimation/';
+                 
+                    this.page.identifier = '2017/06/18/Agile-Estimation/';
+                 
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'https-mseknibilel-github-io';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script>
+        var algoliaClient = algoliasearch('Z7A3XW4R2I', '12db1ad54372045549ef465881c17e743');
+        var algoliaIndex = algoliaClient.initIndex('my-hexo-blog');
+    </script>
+
+    </body>
+</html>

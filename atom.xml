@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Random thoughts based on true stories</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://mseknibilel.github.io/"/>
+  <updated>2017-06-18T10:18:11.348Z</updated>
+  <id>https://mseknibilel.github.io/</id>
+  
+  <author>
+    <name>Bilel Msekni</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Agile estimation</title>
+    <link href="https://mseknibilel.github.io/2017/06/18/Agile-Estimation/"/>
+    <id>https://mseknibilel.github.io/2017/06/18/Agile-Estimation/</id>
+    <published>2017-06-18T10:05:14.000Z</published>
+    <updated>2017-06-18T10:18:11.348Z</updated>
+    
+    <content type="html"><![CDATA[<p>Estimation is a very important part of scrum. It allows the team to evaluate how much work is needed to finish an item and therefore conclude what can be delivered next sprint. It also helps product owners prioritize their items by taking into consideration the required amount of work. An item that takes too much time to be done usually has a lesser priority than another that can be finished quickly. Estimating the right way is essential in scrum to get the best possible results.<br><a id="more"></a></p>
+<div class="figure nocaption center" style="width:;"><img class="fig-img" src="http://i.imgur.com/UqSjuq8.png" alt=""></div>
+<p>There are many techniques to estimate like story points, T-shirt size and time estimation. The latter is the most common method because it is well appreciated by top management.  It’s an easily understood parameter and can be converted to cost therefore gives more control on the project. This is incorrect because estimating in time gives inaccurate results due to the nature of software industry. Most new feature can be done using different methods so it’s not clear which one to choose at the beginning. Furthermore, bugs need to be analysed in order to find root causes. This investigation is hardly measurable in time because it depends on the complexity of the problem and the skills of the investigator. All these factors make time estimation hard thus planning poker ceremonies consume a lot of time which means attendees loss of focus and interest quickly. This is not the only frustrating thing, time estimation is a symbol of micro management. Managers tend to ask the agile team to time track their daily activities and sometimes they go furious if one item does not respect its estimation. This impacts negatively the team motivation (babysitting feeling, lack of trust) and make estimations higher than usual.</p>
+<p>The second method used for estimation is T-shirt size. It consists on estimating items according to their work amount: XS, S, M, L and XL. This makes estimation relatively easier and planning pokers shorter because it doesn’t require to spend lot time analysing solutions and voting options are limited. It’s sufficient to say this item is small or that item is medium in order to assign it to category and move to the next item. The results are more accurate if taken from a category point of view but from a more granular perspective some items might consume more time than it was estimated for therefore reducing the accuracy of team velocity. Comparing items becomes also complicated because there is no clear mathematical relationship between extra small and large.</p>
+<p>The last method for estimation is story point estimation. The goal of this technique is to assign a number of points to every task based on the complexity. For example, a complicated story will have more points than a simpler one. This approach helps the dev team to focus on how difficult is the problem from a technical point of view rather than how much time needed to accomplish the task. Poker plannings don’t take too much time because it’s a complexity evaluation (not a solution discussion) and voting choice is limited. In addition, stories can be compared based on the number of assigned points making velocity more accurate since it is the sum of all story points. Furthermore, this technique helps management predict when an item will be delivered. For instance, if a team velocity is equal to 15 and the backlog has items with following estimated complexity points: 5, 3, 5, 2, 7. The last item with 7 points will be delivered on the next sprint because the current one is full (5+3+5+2 = 15). If the sprint duration is equal to 2 weeks than the item should be delivered in 2 weeks. This method is pretty efficient when coming to drawing charts about the product progress and planning.</p>
+<p>Although scrum recommends this method for estimation, it’s the least used one because it’s not well understood. Let’s dive deeper in this concept :</p>
+<p>Estimating in story points is about guessing how complex the task is. It’s a total abstraction from time. This abstraction is unfortunately confused with the fact that developers might seize the opportunity to spend more time than required on a specific item therefore plumbing productivity performance. Although this is true, it’s sure not the fault of story points method but laziness. Lazy people will always find an excuse even if their tasks are time boxed. The fear of budget depletion is totally understood but it should not be an excuse to time track every single activity. Like mentioned earlier, time tracking is a sign of lack of trust and micro-management. A better approach will be to trust in the dev team. Giving them power to self-organize also means giving them the responsibility to deliver requested feature while respecting deadlines.</p>
+<p>Moving to story points estimation is not difficult, it can be started in parallel run mode to determine  the average team velocity. The difficult part in my opinion is to convince product owner and stakeholders about the advantages of this method. One should start with by explaining the nature of software industry and its challenges (difficult predictability, technical and functional environments). Furthermore, he should talk about how being agile means focusing on the current situation and the near future. This means that the far away future of the product is uncertain and vague but isn’t it already ? The faraway future can’t be predicted because factors change all the time so there is no need to spend too much time analysing opportunities that might not come. It’s understood that every manager would like to guarantee the success of his project but success doesn’t mean that every feature they have in mind must be delivered before the budget runs out because no one knows when the budget will really run out (budget cuts, more investments, …). The truth is success means that at the end of every sprint, the delivered product has the highest added value possible which means that managers should focus more on prioritizing their features based on their added value and worry less about the future. If applied correctly, the best insurance managers have against failure is that they can pull the plug on the project anytime and still get the best outcome possible.</p>
+<p>Finally, adopting scrum and agile isn’t as easy as some people think. Velocity is a fragile factor that depends on many elements. Following KPIs must be done regularly to increase the team production. What agile believes in is that this trust motivate people and engages them even more in the process. Thinking people work better when their activities are time tracked daily will make them work more is absurd. People produce more and better when they feel involved and trusted.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Estimation is a very important part of scrum. It allows the team to evaluate how much work is needed to finish an item and therefore conclude what can be delivered next sprint. It also helps product owners prioritize their items by taking into consideration the required amount of work. An item that takes too much time to be done usually has a lesser priority than another that can be finished quickly. Estimating the right way is essential in scrum to get the best possible results.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="agile" scheme="https://mseknibilel.github.io/tags/agile/"/>
+    
+  </entry>
+  
+</feed>
