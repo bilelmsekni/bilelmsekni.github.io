@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mseknibilel.github.io/"/>
-  <updated>2017-06-18T12:56:47.895Z</updated>
+  <updated>2017-06-18T13:06:50.552Z</updated>
   <id>https://mseknibilel.github.io/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Archivator .. to archive all those old files</title>
+    <link href="https://mseknibilel.github.io/2017/06/18/archivator/"/>
+    <id>https://mseknibilel.github.io/2017/06/18/archivator/</id>
+    <published>2017-06-18T12:57:52.000Z</published>
+    <updated>2017-06-18T13:06:50.552Z</updated>
+    
+    <content type="html"><![CDATA[<p>Cleaning up old files is an incredebly annoying operation. It’s time consuming and might result into errors due to repeating the same actions all the time. However, it’s necessary to remove old files in order to keep your folder clear and gain free space on your hard disk.<br><a id="more"></a><br><div class="figure center" style="width:;"><img class="fig-img" src="http://i.imgur.com/Bf3jTsT.jpg" alt=""></div><br>The best solution to clean up old files while saving time and avoiding mistakes is to automate the process using a sophisticated program or a simple script.<br>For this occasion, i’m glad to present Archivator, my script for archiving old files. It searches a particular folder to compress old files using 7zip then move them to another directory. It simple to understand and easy to customize.</p>
+<p> Follow these steps to make use of it:</p>
+<ol>
+<li>Download 7Zip from this the official <a href="http://www.7-zip.org/" target="_blank" rel="external">link</a></li>
+<li>Install it to your C:\Program Files\7-Zip\</li>
+<li>Download Archivator from my <a href="https://github.com/mseknibilel/Archivator/blob/master/Archivator.ps1" target="_blank" rel="external">github</a></li>
+<li>Open Windows Powershell and update the execution policy using this command: set-executionpolicy bypass</li>
+<li>Navigate to where archivator script have been saved using cd command in windows powershell.</li>
+<li>Archivator takes command lines in this format</li>
+</ol>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.\Archivator -FilesPath <span class="string">"PathToYourFiles"</span> -FileExtension <span class="string">"TypeOfFileToArchive"</span> -DaysToKeep X -ArchivePath <span class="string">"PathToMoveZippedFilesInto"</span></div></pre></td></tr></table></figure>
+<p>For example, this command will zip all txt files in D:\Extracts older than from J-3 and move them to D:\Extracts\Archive\dd-MM-YY</p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.\Archivator -FilesPath <span class="string">"D:\Extracts\"</span> -FileExtension <span class="string">"*.txt"</span> -DaysToKeep <span class="number">3</span> -ArchivePath <span class="string">"D:\Extracts\Archive"</span></div></pre></td></tr></table></figure>
+<ol>
+<li>You can copy your command and paste it in a bat file that you can later use to create a scheduled task inside the task scheduler.</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Cleaning up old files is an incredebly annoying operation. It’s time consuming and might result into errors due to repeating the same actions all the time. However, it’s necessary to remove old files in order to keep your folder clear and gain free space on your hard disk.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="https://mseknibilel.github.io/tags/tools/"/>
+    
+  </entry>
   
   <entry>
     <title>Waterfall is that you?</title>
