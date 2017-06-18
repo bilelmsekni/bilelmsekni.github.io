@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mseknibilel.github.io/"/>
-  <updated>2017-06-18T13:06:50.552Z</updated>
+  <updated>2017-06-18T13:10:11.146Z</updated>
   <id>https://mseknibilel.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Agile management, it&#39;s all about trust !</title>
+    <link href="https://mseknibilel.github.io/2017/06/18/agile-management/"/>
+    <id>https://mseknibilel.github.io/2017/06/18/agile-management/</id>
+    <published>2017-06-18T13:08:03.000Z</published>
+    <updated>2017-06-18T13:10:11.146Z</updated>
+    
+    <content type="html"><![CDATA[<p>Since the beginning of time, hierarchy existed almost everywhere from small families to large companies and even in criminal organizations. Wherever you go, there is someone in charge of taking decisions while others simply execute them. It seems like a proper way to instaure order and move forward. However, i think we haven’t taken a moment to ask ourselves if this is the best way to do so?<br><a id="more"></a><br><div class="figure nocaption center" style="width:;"><img class="fig-img" src="http://i.imgur.com/3JgBE7A.png" alt=""></div></p>
+<p>I believe that great leaders with outstanding vision are a myth. Such burdens of command can’t lie on the shoulders of one human. It’s simply too much even if they have the best management degrees or an impressive charisma. This is probably why some fields tried to solve this issue by following different approaches. For example, in the army, every general has his general staff for advising. In politics, presidency is limited to a couple of years and inside an airplane cockpit, we invented the co-pilot. I’m no expert in these domains so i won’t talk about them but what i would really like to talk about is our software industry.</p>
+<p>Today’s most existing companies share the same management model. They all start by a CEO and his advisors at the top of the pyramid. Then, different departments form the body of the pyramid. They are usually identified by their core business like marketing, human resources, … In every department, there is leader and perhaps deputy leaders. They shape the management layer of that department. At the bottom of the pyramid, we find the execution layer made of developers, quality assurances, business analysts, system administrators, …<br>This traditional hierarchy looks reasonable at first glance but let’s dive deeper in how it works.</p>
+<p>Usually, the CEO shares his decisions with the advising board. Once validated, he orders department leaders to follow these decisions in order to realize his vision for the company. In their turn, department leaders transmit orders to the staff below them until it reaches the bottom of the pyramid. It seems like a simple process but actually it’s not. Because CEO orders have to go through multiple middle layers to get to execution teams, they risk being altered unintentionally ( misunderstandings or poor communication) or even intentionally (conflict with personal interests and political choices). This usually happens because theory doesn’t take in consideration the human factor in the equation of the right management model.<br>Furthermore, it gets even worse when progress reports have to be delivered. For example, let’s suppose that developing team is really behind schedule, the leader will likely hide or underestimate this fact in his progress report because his bonus depends on it. This wrong progress report is then submitted to the above layers where every manager will likely do the same by hiding or diminishing the gravity of the problem. By the time progress reports reach the CEO’s desk, they are all displaying promising data so he plans his next steps using these incorrect informations thus driving projects to failure. Eventually, the more layers a company has, the less transparent it will be. This forms major obstacles for the company to reach its maximum performance, so  how can we solve this issue? Easy, it’s through agile management.</p>
+<p>First, in agile management, burdens of command must be dispatched, companies shouldn’t have a single point for taking decisions but multiple points. This helps avoid centralization in favor of decentralization. When responsibilities are shared, risks are too which means they are reduced therefore increasing the chances of success. Eventually, agile describes every problem as everyone’s problem and the team’s main responsibility is to work together on solving it.</p>
+<p>Now, how far should a company go to distribute the authority of taking decisions? This question brings us to the second step to build better management and the answer is as far as it takes. This means that good managers should empower even the smallest employee at the bottom of the pyramid. Why ? because after all he is producing the real added value. Giving these employees orders will give them a sense of babysitting or perhaps worse submission. In both cases, motivation is far away from its highest levels unlike getting them involved in the process of making decisions where not only his motivation and performance will increase but will also help find the best decisions to take since he is the closest to the manufactured product.<br>Most companies ignore this fact thinking that their success is related only to the CEO’s decisions. I personally find it hard to imagine that the farthest person from the product is the one who is best fit to take decisions about it.<br>However, stretching out the commanding responsibility doesn’t mean we should have more managers, it only implies that employees will have enough power to decide on their own the best way to auto-organize themselves in order to accomplish their tasks. This freedom of choice is a reflection of trust and space for employees to exercise their management skills.</p>
+<p>Finally, if every team becomes self organized, what is the outcome of the current managers? where do they fit in this new company culture?<br>The role of managers should change from giving orders to supervising. They no longer need to tell people what to do, instead, they should supervise progress and rise alerts to the team about impediments and urgent demands. This transforms the traditional bossing relationship between managers and their teams to cooperation and leadership.<br>Furthermore, because they don’t need to spend too much time coming up with new ideas for the product, more time will be available for managers to explore new markets and possible customers. They can rely on new market needs to select the best decisions suggested by employees to enhance the product. Eventually, instead of driving a product they don’t know too much about, they drive more accurate suggestions about this product to respond to customer requests.<br>These three points are pillars to agile management and enterprise liberation. It’s only by removing middle layers that execution layers can be closer to the customer. The meaning of removing is not firing people but adapting a real flat hierarchy based on cooperation and communication instead of orders and processes.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Since the beginning of time, hierarchy existed almost everywhere from small families to large companies and even in criminal organizations. Wherever you go, there is someone in charge of taking decisions while others simply execute them. It seems like a proper way to instaure order and move forward. However, i think we haven’t taken a moment to ask ourselves if this is the best way to do so?&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="agile" scheme="https://mseknibilel.github.io/tags/agile/"/>
+    
+  </entry>
   
   <entry>
     <title>Archivator .. to archive all those old files</title>
