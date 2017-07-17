@@ -1,0 +1,810 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Random thoughts based on true stories">
+    <title>Tips from an Angular trip - Testing - Random thoughts based on true stories</title>
+    <meta name="author" content="Bilel Msekni">
+    
+    
+        <link rel="icon" href="https://mseknibilel.github.io/assets/images/favicon.ico">
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="Since Angular’s official release in September 2016, a lot of ink has been spilled over the ground-up rewrite of AngularJS.While the quantity of informations is huge, it seldom addresses tips on how to">
+<meta name="keywords" content="Angular,Testing">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Tips from an Angular trip - Testing">
+<meta property="og:url" content="https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/index.html">
+<meta property="og:site_name" content="Random thoughts based on true stories">
+<meta property="og:description" content="Since Angular’s official release in September 2016, a lot of ink has been spilled over the ground-up rewrite of AngularJS.While the quantity of informations is huge, it seldom addresses tips on how to">
+<meta property="og:updated_time" content="2017-07-17T20:35:44.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tips from an Angular trip - Testing">
+<meta name="twitter:description" content="Since Angular’s official release in September 2016, a lot of ink has been spilled over the ground-up rewrite of AngularJS.While the quantity of informations is huge, it seldom addresses tips on how to">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/ed5737046d4b07d0ecac5e6d97d65dbe?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-sxklfps8ywgfyyjcowvnb4gxdgt0zjts3hsguljmv9uqanxjbnitrovtbrek.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-100772276-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="5">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">Random thoughts based on true stories</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://www.gravatar.com/avatar/ed5737046d4b07d0ecac5e6d97d65dbe?s=90" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="5">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/ed5737046d4b07d0ecac5e6d97d65dbe?s=110" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Bilel Msekni</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>I am a software engineer specialized in web development and agile practices</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/mseknibilel/" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://fr.linkedin.com/in/bilelmsekni/" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="mailto:msekni.bilel@gmail.com" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="5"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Tips from an Angular trip - Testing
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-07-17T22:35:44+02:00">
+	
+		    Jul 17, 2017
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Since Angular’s official release in September 2016, a lot of ink has been spilled over the ground-up rewrite of AngularJS.<br>While the quantity of informations is huge, it seldom addresses tips on how to solve specific problems. This has led me to write this serie of posts about my journey with Angular.<br><a id="more"></a><br>In this post, I will focus on testing tips. If you are unfamiliar with Angular testing, you can check out this very good <a href="https://codecraft.tv/courses/angular/unit-testing/overview/" target="_blank" rel="external">tutorial</a> from codecraft.</p>
+<h1 id="Destimator"><a href="#Destimator" class="headerlink" title="Destimator"></a>Destimator</h1><p>First, I created an application called Destimator which estimates your death risk. Pretty crazy right ! Well it was hard to find an original idea with all those demo apps in the wild but no worries, nothing is scary, after all we are here to talk Angular ;)<br>It is splitted into two parts:</p>
+<ul>
+<li><strong>estimation-form:</strong> Responsible for rendering the form and display the result.<ul>
+<li>estimation-form.component.ts: Rendering component</li>
+<li>estimation-form-component.html: Component template</li>
+<li>estimation-info.model.ts: form information model</li>
+<li>estimation-result.model.ts: form result model</li>
+</ul>
+</li>
+<li><strong>estimation-logic:</strong> Business logic for calculating death risk.<ul>
+<li>estimation-logic.service.ts: service to calculate then estimate death risk</li>
+<li>score-range.service.ts: service to retrive data from api</li>
+<li>score-range.model.ts: model for communicating with api</li>
+</ul>
+</li>
+</ul>
+<p>Destimator’s repo is publicly available on my github <a href="https://github.com/mseknibilel/Destimator" target="_blank" rel="external">here</a>. If you dare to try <a href="https://mseknibilel.github.io/Destimator/">it</a><br>Now, that we have a basic understanding of the roles, we can move to the testing part.</p>
+<h1 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h1><h2 id="Frameworks-tip"><a href="#Frameworks-tip" class="headerlink" title="Frameworks tip"></a>Frameworks tip</h2><p>The project was generated using <a href="https://github.com/angular/angular-cli" target="_blank" rel="external">Angular-CLI</a>. The testing uses the very popular <a href="https://jasmine.github.io/" target="_blank" rel="external">Jasmine</a> framework for testing, asserting and even mocking. I prefer to let Jasmine take care of the testing part only while <a href="http://chaijs.com/ popular assertion library" target="_blank" rel="external">Chai</a> handle the assertion part and <a href="http://sinonjs.org/ popular mocking library" target="_blank" rel="external">Sinon</a> the mocking part.<br>It’s a choice driven by Separation of Concerns (one thing should do one thing only and do it well) although some might argue that this is JavaScript fatigue all over again.</p>
+<p>Bare with me for the time being, I hope to convince you by this post’s end.<br><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -D chai sinon</div></pre></td></tr></table></figure></p>
+<h2 id="First-test-technique"><a href="#First-test-technique" class="headerlink" title="First test technique"></a>First test technique</h2><p>Testing an angular component consists on preparing a standalone module that will contain every dependency your component and its template require to run. While most people will copy paste or generate a testing file, I prefer to start with an empty module. Why ? Because understanding dependencies helps me while debugging and tuning my application.<br>In this example, I want to test my estimation-form.component, so my approach is:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; ComponentFixture, TestBed &#125; <span class="keyword">from</span> <span class="string">'@angular/core/testing'</span>;</div><div class="line"><span class="keyword">import</span> &#123; EstimationFormComponent &#125; <span class="keyword">from</span> <span class="string">'app/estimation-form/estimation-form.component'</span>;</div><div class="line"><span class="keyword">import</span> &#123; expect &#125; <span class="keyword">from</span> <span class="string">'chai'</span>;</div><div class="line">describe(<span class="string">'estimation form'</span>, () =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> fixture: ComponentFixture&lt;EstimationFormComponent&gt;;</div><div class="line">    <span class="keyword">let</span> comp: EstimationFormComponent;</div><div class="line">    beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        TestBed.configureTestingModule(&#123;</div><div class="line">            <span class="attr">imports</span>: [],</div><div class="line">            <span class="attr">declarations</span>: [</div><div class="line">              EstimationFormComponent</div><div class="line">            ],</div><div class="line">            <span class="attr">providers</span>: []</div><div class="line">        &#125;);</div><div class="line">        fixture = TestBed.createComponent(EstimationFormComponent);</div><div class="line">        comp = fixture.componentInstance;</div><div class="line">    &#125;);</div><div class="line">    it(<span class="string">'should have cheatingOnPartnerLvl, adrenalineDose, hasSuperHeroFriend as form keys when component initialize'</span>, () =&gt; &#123;</div><div class="line">        comp.ngOnInit();</div><div class="line">        expect(<span class="built_in">Object</span>.keys(comp.estimationForm.value)).to.be.eql([<span class="string">'cheatingOnPartnerLvl'</span>, <span class="string">'adrenalineDose'</span>, <span class="string">'hasSuperHeroFriend'</span>, <span class="string">'email'</span>]);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><br>As you can see, my test is simply checking if I have set the right keys in my reactive form group. Although the test will very likely pass (unless I made a typo somewhere), it won’t run because my testing module doesn’t contain my component’s dependencies.<br>Let’s try to run it and see the error:<br><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm test</div></pre></td></tr></table></figure><br>The output is:<br><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Error: Template parse errors:</div><div class="line">       Can<span class="string">'t bind to '</span>formGroup<span class="string">' since it isn'</span>t a known property of <span class="string">'div'</span>. (<span class="string">"&lt;div class="</span>row<span class="string">" [ERROR -&gt;][formGroup]="</span>estimationForm<span class="string">"&gt;</span></div></pre></td></tr></table></figure><br>Well, this means that our component is dependent on the ReactiveFormsModule which contains the formGroup directive. With some little magic:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; ComponentFixture, TestBed &#125; <span class="keyword">from</span> <span class="string">'@angular/core/testing'</span>;</div><div class="line"><span class="keyword">import</span> &#123; EstimationFormComponent &#125; <span class="keyword">from</span> <span class="string">'app/estimation-form/estimation-form.component'</span>;</div><div class="line"><span class="keyword">import</span> &#123; expect &#125; <span class="keyword">from</span> <span class="string">'chai'</span>;</div><div class="line"><span class="keyword">import</span> &#123; ReactiveFormsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</div><div class="line">describe(<span class="string">'estimation form'</span>, () =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> fixture: ComponentFixture&lt;EstimationFormComponent&gt;;</div><div class="line">    <span class="keyword">let</span> comp: EstimationFormComponent;</div><div class="line">    beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        TestBed.configureTestingModule(&#123;</div><div class="line">            <span class="attr">imports</span>: [</div><div class="line">            <span class="comment">// Adding the required module</span></div><div class="line">              ReactiveFormsModule</div><div class="line">            ],</div><div class="line">            <span class="attr">declarations</span>: [</div><div class="line">              EstimationFormComponent</div><div class="line">            ],</div><div class="line">            <span class="attr">providers</span>: []</div><div class="line">        &#125;);</div><div class="line">        ...</div></pre></td></tr></table></figure><br>If we run it again, a new error appears:<br><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Error: Template parse errors:</div><div class="line"><span class="string">'md-icon'</span> is not a known element:</div><div class="line"><span class="keyword">If</span> <span class="string">'md-icon'</span> is an Angular component, then verify that it is part of this module.</div></pre></td></tr></table></figure><br>Again, our component’s template is using Angular Material components without importing the MaterialModule in our testing module. Fix it by importing that module.<br>I won’t go through all error messages because it’s not my point. What I wanted to explain by the simple test approach is that you probably need to spend some time understanding what your component requires to run before starting to test it. This might seems time consuming but if one single test can help remove duplicated dependencies, optimize my code and discover more about Angular modules, it might be a good time investment.</p>
+<h2 id="Isolation-technique"><a href="#Isolation-technique" class="headerlink" title="Isolation technique"></a>Isolation technique</h2><p>Let’s fast forward to where we finish setting up all dependencies, our file should look like this:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; ComponentFixture, TestBed &#125; <span class="keyword">from</span> <span class="string">'@angular/core/testing'</span>;</div><div class="line"><span class="keyword">import</span> &#123; EstimationFormComponent &#125; <span class="keyword">from</span> <span class="string">'app/estimation-form/estimation-form.component'</span>;</div><div class="line"><span class="keyword">import</span> &#123; ReactiveFormsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</div><div class="line"><span class="keyword">import</span> &#123; expect &#125; <span class="keyword">from</span> <span class="string">'chai'</span>;</div><div class="line"><span class="keyword">import</span> &#123; MaterialModule &#125; <span class="keyword">from</span> <span class="string">'@angular/material'</span>;</div><div class="line"><span class="keyword">import</span> &#123; EstimationLogicService &#125; <span class="keyword">from</span> <span class="string">'app/estimation-logic/estimation-logic.service'</span>;</div><div class="line"><span class="keyword">import</span> &#123; ScoreRangeService &#125; <span class="keyword">from</span> <span class="string">'app/estimation-logic/score-range.service'</span>;</div><div class="line"><span class="keyword">import</span> &#123; HttpModule &#125; <span class="keyword">from</span> <span class="string">'@angular/http'</span>;</div><div class="line"><span class="keyword">import</span> &#123; BrowserAnimationsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser/animations'</span>;</div><div class="line"></div><div class="line">describe(<span class="string">'estimation form'</span>, () =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> fixture: ComponentFixture&lt;EstimationFormComponent&gt;;</div><div class="line">    <span class="keyword">let</span> comp: EstimationFormComponent;</div><div class="line">    beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        TestBed.configureTestingModule(&#123;</div><div class="line">            <span class="attr">imports</span>: [</div><div class="line">                ReactiveFormsModule,</div><div class="line">                MaterialModule,</div><div class="line">                HttpModule,</div><div class="line">                BrowserAnimationsModule</div><div class="line">            ],</div><div class="line">            <span class="attr">declarations</span>: [</div><div class="line">                EstimationFormComponent</div><div class="line">            ],</div><div class="line">            <span class="attr">providers</span>: [</div><div class="line">                EstimationLogicService,</div><div class="line">                ScoreRangeService</div><div class="line">            ]</div><div class="line">        &#125;);</div><div class="line">        fixture = TestBed.createComponent(EstimationFormComponent);</div><div class="line">        comp = fixture.componentInstance;</div><div class="line">    &#125;);</div><div class="line">    it(<span class="string">'should have cheatingOnPartnerLvl, adrenalineDose, hasSuperHeroFriend as form keys when component initialize'</span>, () =&gt; &#123;</div><div class="line">        comp.ngOnInit();</div><div class="line">        expect(<span class="built_in">Object</span>.keys(comp.estimationForm.value)).to.be.eql([<span class="string">'cheatingOnPartnerLvl'</span>, <span class="string">'adrenalineDose'</span>, <span class="string">'hasSuperHeroFriend'</span>]);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><br>The test passes successfully but did you notice something weird about our dependencies ?<br>We are importing the HttpModule. How is this possible?! Tests are supposed to be isolated.<br>Well, if we take a look at the ScoreRangeService:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@Injectable()</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ScoreRangeService</span> </span>&#123;</div><div class="line">  <span class="comment">// Http dependency</span></div><div class="line">    <span class="keyword">constructor</span>(private http: Http) &#123; &#125;</div><div class="line">    getRange(score: number): Observable&lt;ScoreRange&gt; &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.getRanges()</div><div class="line">            .map(<span class="function"><span class="params">res</span> =&gt;</span> res.filter(<span class="function"><span class="params">r</span> =&gt;</span> score &gt;= r.maxScore))</div><div class="line">            .map(<span class="function"><span class="params">res</span> =&gt;</span> res[res.length - <span class="number">1</span>]);</div><div class="line">    &#125;</div><div class="line">    private getRanges(): Observable&lt;ScoreRange[]&gt; &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.http.get(<span class="string">'../../api/score.range.json'</span>)</div><div class="line">            .map(<span class="function"><span class="params">res</span> =&gt;</span> res.json().ranges <span class="keyword">as</span> ScoreRange[]);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>We will notice the dependency on the http service in the constructor, so how can we eliminate that. Certainly, we won’t change our service’s implementation but rather modify how our testing module is providing it by using a fake implementation.<br>How can we create a fake implementation ? This is where Sinon shines ! Told you we will get back to this ;)<br>By using the createStubInstance method of Sinon with no effort. The mock consists of an object with the same keys and signatures as the original implementation so no Angular nor typescript will detect the difference.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; ComponentFixture, TestBed &#125; <span class="keyword">from</span> <span class="string">'@angular/core/testing'</span>;</div><div class="line"><span class="keyword">import</span> &#123; EstimationFormComponent &#125; <span class="keyword">from</span> <span class="string">'app/estimation-form/estimation-form.component'</span>;</div><div class="line"><span class="keyword">import</span> &#123; ReactiveFormsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</div><div class="line"><span class="keyword">import</span> &#123; expect &#125; <span class="keyword">from</span> <span class="string">'chai'</span>;</div><div class="line"><span class="keyword">import</span> &#123; MaterialModule &#125; <span class="keyword">from</span> <span class="string">'@angular/material'</span>;</div><div class="line"><span class="keyword">import</span> &#123; EstimationLogicService &#125; <span class="keyword">from</span> <span class="string">'app/estimation-logic/estimation-logic.service'</span>;</div><div class="line"><span class="keyword">import</span> &#123; ScoreRangeService &#125; <span class="keyword">from</span> <span class="string">'app/estimation-logic/score-range.service'</span>;</div><div class="line"><span class="keyword">import</span> &#123; createStubInstance &#125; <span class="keyword">from</span> <span class="string">'sinon'</span>;</div><div class="line"><span class="keyword">import</span> &#123; BrowserAnimationsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser/animations'</span>;</div><div class="line"></div><div class="line">describe(<span class="string">'estimation form'</span>, () =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> fixture: ComponentFixture&lt;EstimationFormComponent&gt;;</div><div class="line">    <span class="keyword">let</span> comp: EstimationFormComponent;</div><div class="line">    beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        TestBed.configureTestingModule(&#123;</div><div class="line">            <span class="attr">imports</span>: [</div><div class="line">              <span class="comment">// Notice that we got rid if the HttpModule !</span></div><div class="line">                ReactiveFormsModule,</div><div class="line">                MaterialModule,</div><div class="line">                BrowserAnimationsModule</div><div class="line">            ],</div><div class="line">            <span class="attr">declarations</span>: [</div><div class="line">                EstimationFormComponent</div><div class="line">            ],</div><div class="line">            <span class="attr">providers</span>: [</div><div class="line">                EstimationLogicService,</div><div class="line">                &#123; <span class="attr">provide</span>: ScoreRangeService, <span class="attr">useValue</span>: createStubInstance(ScoreRangeService) &#125;</div><div class="line">            ]</div><div class="line">        &#125;);</div><div class="line">        fixture = TestBed.createComponent(EstimationFormComponent);</div><div class="line">        comp = fixture.componentInstance;</div><div class="line">    &#125;);</div><div class="line">    it(<span class="string">'should have cheatingOnPartnerLvl, adrenalineDose, hasSuperHeroFriend as form keys when component initialize'</span>, () =&gt; &#123;</div><div class="line">        comp.ngOnInit();</div><div class="line">        expect(<span class="built_in">Object</span>.keys(comp.estimationForm.value)).to.be.eql([<span class="string">'cheatingOnPartnerLvl'</span>, <span class="string">'adrenalineDose'</span>, <span class="string">'hasSuperHeroFriend'</span>]);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><br>While this is a quick way to get tests up and running, it’s not the most powerful one though. Check out the next tip to understand why.</p>
+<h2 id="Isolation-Spy-technique"><a href="#Isolation-Spy-technique" class="headerlink" title="Isolation + Spy technique"></a>Isolation + Spy technique</h2><p>We pick up from where we left, excited with our latest discovery createStubInstanc from Sinon. Let’s do the same for our EstimationLogicService:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">describe(<span class="string">'estimation form'</span>, () =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> fixture: ComponentFixture&lt;EstimationFormComponent&gt;;</div><div class="line">    <span class="keyword">let</span> comp: EstimationFormComponent;</div><div class="line">    beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        TestBed.configureTestingModule(&#123;</div><div class="line">            <span class="attr">imports</span>: [</div><div class="line">                ReactiveFormsModule,</div><div class="line">                MaterialModule,</div><div class="line">                BrowserAnimationsModule</div><div class="line">            ],</div><div class="line">            <span class="attr">declarations</span>: [</div><div class="line">                EstimationFormComponent</div><div class="line">            ],</div><div class="line">            <span class="attr">providers</span>: [</div><div class="line">                &#123; <span class="attr">provide</span>: EstimationLogicService, <span class="attr">useValue</span>: createStubInstance(EstimationLogicService) &#125;,</div><div class="line">                &#123; <span class="attr">provide</span>: ScoreRangeService, <span class="attr">useValue</span>: createStubInstance(ScoreRangeService) &#125;</div><div class="line">            ]</div><div class="line">        &#125;);</div><div class="line">        fixture = TestBed.createComponent(EstimationFormComponent);</div><div class="line">        comp = fixture.componentInstance;</div><div class="line">    &#125;);</div><div class="line">    ...</div><div class="line">&#125;);</div></pre></td></tr></table></figure><br>Imagine now, we are writing a second test to verify that our EstimationLogicService is called when a valid form is submitted:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">    ...</div><div class="line">    it(<span class="string">'should call estimationLogicService when form is valid and submit executed'</span>, () =&gt; &#123;</div><div class="line">        comp.ngOnInit();</div><div class="line">        <span class="comment">// creating a spy to listen for methods/properties invocations</span></div><div class="line">        <span class="keyword">const</span> estimationLogicSpy = spy(estimationLogicServiceStub, <span class="string">'estimate'</span>);</div><div class="line">        comp.estimationForm.setValue(&#123;</div><div class="line">            <span class="string">'cheatingOnPartnerLvl'</span>: <span class="number">1</span>,</div><div class="line">            <span class="string">'adrenalineDose'</span>: <span class="number">50</span>,</div><div class="line">            <span class="string">'hasSuperHeroFriend'</span>: <span class="literal">false</span>,</div><div class="line">            <span class="string">'email'</span>: <span class="string">'tuto@ng.io'</span></div><div class="line">        &#125;);</div><div class="line">        comp.submitForm();</div><div class="line">        expect(estimationLogicSpy.called).to.be.true;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><br>Technically, this would work but in practice you will encounter this error:<br><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">TypeError: Attempted to wrap undefined property estimate as <span class="keyword">function</span></div><div class="line">    at wrapMethod (http://localhost:<span class="number">9876</span>/base/src/test.ts?ae8b7e95826ca6c1ffc4a2d5aadc1d417ff137d0:<span class="number">27854</span>:<span class="number">21</span>)</div></pre></td></tr></table></figure><br>The message explain that we can’t wrap an already wrapped function. Remember we created a stub using createStubInstance then we used a spy which in turn will attempt to create a stub from a stub. Unfortunately, Sinon doesn’t support chaining stubs so what is the solution ?<br>Javascript magic ! This might sound stupid but actually it works fine and it’s also very useful.<br>My advice in such situation is to create fake shell classes, same method signatures but without a body, just like an empty shell. Check out the implementation for FakeEstimationLogicService:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; EstimationInfo &#125; <span class="keyword">from</span> <span class="string">'app/estimation-form/estimation-info.model'</span>;</div><div class="line"><span class="keyword">import</span> &#123; EstimationResult &#125; <span class="keyword">from</span> <span class="string">'app/estimation-form/estimation-result.model'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Observable &#125; <span class="keyword">from</span> <span class="string">'rxjs/Observable'</span>;</div><div class="line">@Injectable()</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">FakeEstimationLogicService</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123; &#125;</div><div class="line">    estimate(formValues: EstimationInfo): Observable&lt;EstimationResult&gt; &#123;</div><div class="line">        <span class="keyword">return</span> Observable.of();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>Then, we go back to our testing module and we make some changes:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">import &#123; FakeEstimationLogicService &#125; <span class="keyword">from</span> <span class="string">'fake/estimation-logic.service.fake'</span>;</div><div class="line">describe(<span class="string">'estimation form'</span>, () =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> fixture: ComponentFixture&lt;EstimationFormComponent&gt;;</div><div class="line">    <span class="keyword">let</span> comp: EstimationFormComponent;</div><div class="line">    <span class="keyword">let</span> estimationLogicServiceStub: EstimationLogicService;</div><div class="line">    beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        TestBed.configureTestingModule(&#123;</div><div class="line">            <span class="attr">imports</span>: [</div><div class="line">                ReactiveFormsModule,</div><div class="line">                MaterialModule,</div><div class="line">                BrowserAnimationsModule</div><div class="line">            ],</div><div class="line">            <span class="attr">declarations</span>: [</div><div class="line">                EstimationFormComponent</div><div class="line">            ],</div><div class="line">            <span class="attr">providers</span>: [</div><div class="line">                &#123; <span class="attr">provide</span>: EstimationLogicService, <span class="attr">useClass</span>: FakeEstimationLogicService &#125;,</div><div class="line">                &#123; <span class="attr">provide</span>: ScoreRangeService, <span class="attr">useValue</span>: createStubInstance(ScoreRangeService) &#125;</div><div class="line">            ]</div><div class="line">        &#125;);</div><div class="line">        fixture = TestBed.createComponent(EstimationFormComponent);</div><div class="line">        comp = fixture.componentInstance;</div><div class="line">        estimationLogicServiceStub = TestBed.get(EstimationLogicService);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure><br>and Voilà ! it works like a charm ;)</p>
+<h2 id="AsyncTests"><a href="#AsyncTests" class="headerlink" title="AsyncTests"></a>AsyncTests</h2><p>My last tip is about async tests. It’s a special kind of tests designed for asynchrounous code. What’s special about asynchrounous code? We don’t know exactly when the result will be avaiblable. It’s just a promise that we should examine at the right time otherwise our assertion won’t make any sense.<br>Let’s take the example of our email input. Instead of immediatly checking the input when the user starts typing, we want to give him/her some time to finish up. That should provide a better user experience.</p>
+<p>In this case, we will defer checking format by 500 ms using debouceTime operator like the code below:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.estimationForm.controls[<span class="string">'email'</span>].valueChanges</div><div class="line">    .debounceTime(<span class="number">500</span>)</div><div class="line">    .subscribe(<span class="function"><span class="params">res</span> =&gt;</span> <span class="keyword">this</span>.isValidEmail = <span class="keyword">this</span>.estimationForm.controls[<span class="string">'email'</span>].valid);</div></pre></td></tr></table></figure></p>
+<p>Let’s write a test for this:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'should display error message when email is not valid'</span>, () =&gt; &#123;</div><div class="line">    comp.ngOnInit();</div><div class="line">    comp.estimationForm.setValue(&#123;</div><div class="line">        <span class="attr">cheatingOnPartnerLvl</span>: <span class="number">2</span>,</div><div class="line">        <span class="attr">adrenalineDose</span>: <span class="number">29</span>,</div><div class="line">        <span class="attr">hasSuperHeroFriend</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">email</span>: <span class="string">'bad_email_format'</span></div><div class="line">    &#125;);</div><div class="line">    expect(comp.isValidEmail).to.be.false;</div><div class="line">    fixture.detectChanges();</div><div class="line">    expect(fixture.debugElement.query(By.css(<span class="string">'.alert.alert-danger'</span>))</div><div class="line">        .nativeElement.innerText).to.be.eql(<span class="string">'Please enter a valid email address'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>When this test executes, our expect assertion will simply happen before debounceTime has finished so it will fail. How can we fix it ? Well, some special tools are required.</p>
+<h3 id="fakeAsync-and-tick"><a href="#fakeAsync-and-tick" class="headerlink" title="fakeAsync and tick"></a>fakeAsync and tick</h3><p>fakeAsync and tick are provided by @angular/core/testing. The fakeAsync executes our test in a fake async zone while tick blocks execution and simulates time passage.<br>Let’s see how our test will look like:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'should display error message when email is not valid'</span>, fakeAsync(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    comp.ngOnInit();</div><div class="line">    comp.estimationForm.setValue(&#123;</div><div class="line">        <span class="attr">cheatingOnPartnerLvl</span>: <span class="number">2</span>,</div><div class="line">        <span class="attr">adrenalineDose</span>: <span class="number">29</span>,</div><div class="line">        <span class="attr">hasSuperHeroFriend</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">email</span>: <span class="string">'bad_email_format'</span></div><div class="line">    &#125;);</div><div class="line">    tick(<span class="number">500</span>);</div><div class="line">    expect(comp.isValidEmail).to.be.false;</div><div class="line">    fixture.detectChanges();</div><div class="line">    expect(fixture.debugElement.query(By.css(<span class="string">'.alert.alert-danger'</span>))</div><div class="line">        .nativeElement.innerText).to.be.eql(<span class="string">'Please enter a valid email address'</span>);</div><div class="line">&#125;));</div></pre></td></tr></table></figure></p>
+<h3 id="async-and-whenStable"><a href="#async-and-whenStable" class="headerlink" title="async and whenStable"></a>async and whenStable</h3><p>Although the syntax is a little different but the purpose stays he same. The async wraps the code in an async zone while whenStable will only execute when all pending promises are resolved. This is a rewrite of the previous test using async and whenStable:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'should display error message when email is not valid using async'</span>, <span class="keyword">async</span>(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    fixture.whenStable().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        expect(comp.isValidEmail).to.be.false;</div><div class="line">        fixture.detectChanges();</div><div class="line">        expect(fixture.debugElement.query(By.css(<span class="string">'.alert.alert-danger'</span>))</div><div class="line">            .nativeElement.innerText).to.be.eql(<span class="string">'Please enter a valid email address'</span>);</div><div class="line">    &#125;);</div><div class="line">    comp.ngOnInit();</div><div class="line">    comp.estimationForm.setValue(&#123;</div><div class="line">        <span class="attr">cheatingOnPartnerLvl</span>: <span class="number">2</span>,</div><div class="line">        <span class="attr">adrenalineDose</span>: <span class="number">29</span>,</div><div class="line">        <span class="attr">hasSuperHeroFriend</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">email</span>: <span class="string">'bad_email_format'</span></div><div class="line">    &#125;);</div><div class="line">&#125;));</div></pre></td></tr></table></figure></p>
+<h3 id="jasmine-done"><a href="#jasmine-done" class="headerlink" title="jasmine done"></a>jasmine done</h3><p>While the previous tools were provided by Angular, Jasmine also provides its own mecanism to test asynchronous code. It’s based on a function usually called done and passed into the parameters of the test. This function should be called when all async processing is complete like the following example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'should display error message when email is not valid using done'</span>, (done) =&gt; &#123;</div><div class="line">    comp.ngOnInit();</div><div class="line">    comp.estimationForm.setValue(&#123;</div><div class="line">        <span class="attr">cheatingOnPartnerLvl</span>: <span class="number">2</span>,</div><div class="line">        <span class="attr">adrenalineDose</span>: <span class="number">29</span>,</div><div class="line">        <span class="attr">hasSuperHeroFriend</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">email</span>: <span class="string">'bad_email_format'</span></div><div class="line">    &#125;);</div><div class="line">    fixture.whenStable().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        expect(comp.isValidEmail).to.be.false;</div><div class="line">        fixture.detectChanges();</div><div class="line">        expect(fixture.debugElement.query(By.css(<span class="string">'.alert.alert-danger'</span>))</div><div class="line">            .nativeElement.innerText).to.be.eql(<span class="string">'Please enter a valid email address'</span>);</div><div class="line">    &#125;);</div><div class="line">    done();</div><div class="line">&#125;);</div></pre></td></tr></table></figure><br>Like demonstrated above, there are 3 different approaches to test async code, it’s up to the developer to choose. Personally, my favorite is the first one with fakeAsync and tick because it make my code look synchronous therefore easier to understand and debug.</p>
+<p>This is the end of this first post on Angular journey, stay tuned for what’s next !</p>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Angular/">Angular</a> <a class="tag tag--primary tag--small t-link" href="/tags/Testing/">Testing</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/18/agile-management/" data-tooltip="Agile management, it&#39;s all about trust !">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 Bilel Msekni. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/18/agile-management/" data-tooltip="Agile management, it&#39;s all about trust !">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">
+                    <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">
+                    <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">
+                    <i class="fa fa-google-plus"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/ed5737046d4b07d0ecac5e6d97d65dbe?s=110" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Bilel Msekni</h4>
+        
+            <div id="about-card-bio"><p>I am a software engineer specialized in web development and agile practices</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Software craftsman</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                France, Paris
+            </div>
+        
+    </div>
+</div>
+
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                            <img class="media-image" src="https://i.imgur.com/UqSjuq8.png" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/Agile-Estimation/">
+                            <h3 class="media-heading">Agile estimation</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 18, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>Estimation is a very important part of scrum. It allows the team to evaluate how much work is needed to finish an item and therefore conclude what can be delivered next sprint. It also helps product owners prioritize their items by taking into consideration the required amount of work. An item that takes too much time to be done usually has a lesser priority than another that can be finished quickly. Estimating the right way is essential in scrum to get the best possible results.<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/7-Steps-For-Professional-Code/">
+                            <img class="media-image" src="https://i.imgur.com/nZ4zb0O.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/7-Steps-For-Professional-Code/">
+                            <h3 class="media-heading">7 Steps for professional code</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 18, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>Yeah, i know … The first question that pops into your minds is: Doesn’t people get tired of writing this bla bla over and over again ?!! My Code is perfect and I don’t need no steps to tell me what to do and what not to do … Well , I believe that if our codes where so perfect we wouldn’t spend debugging it , creating break points and buying new keyboards !!<br>Come on, it won’t take you over 10 minutes to read and perhaps avoid looking like this.</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/yet-another-design-pattern/">
+                            <img class="media-image" src="https://i.imgur.com/eDFLVvH.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/yet-another-design-pattern/">
+                            <h3 class="media-heading">Yet another design pattern</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 18, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>It all started with this <a href="https://njimmahdi.blogspot.fr/2014/05/factory-pattern-with-net-technology.html" target="_blank" rel="external">article</a> posted by a good friend of mine about his way of implementing the factory pattern.</p>
+<p>Although there is nothing to approach about his way, something kept itching me to write a second article about another design pattern that might fit in this situation as well.<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/traveler-guide-to-eastern-canada-and-us/">
+                            <img class="media-image" src="https://i.imgur.com/smNRznV.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/traveler-guide-to-eastern-canada-and-us/">
+                            <h3 class="media-heading">Traveler&#39;s guide to Canada And United States</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 18, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>This guide is destined to help people visit the eastern coasts of Canada and United States. It will cover the following Cities: <strong>Montreal</strong> - <strong>Ottawa</strong> - <strong>Toronto</strong> – <strong>Niagara Falls</strong> (Canadian &amp; US Sides) - <strong>Chicago</strong> - <strong>Miami</strong> - <strong>Washington DC</strong> - <strong>New York</strong>. I will focus more on what you need to bring and how to travel from one place to another. I will only be suggesting how much time to spend in every town but it’s really up to you to choose what to see and do in every town. Finally, this guide is based on my personal experience and I’ll be happy to answer any questions you might have. If you like it, share it!<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/who-is-this-scrum-master/">
+                            <img class="media-image" src="https://i.imgur.com/lCYMhom.png" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/who-is-this-scrum-master/">
+                            <h3 class="media-heading">Who is this person so called scrum master?</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 18, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>In scrum, only three roles exist: Product owner, Dev team and the scrum master.<br>While the product owner is responsible for driving the project and the dev team is in charge of realizing it, no one really knows exactly what the scrum master’s role is. Is he the one who animates the daily meetings, the poker plannings and retrospectives ? Or may be he is manager of the dev team?<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/waterfall-is-that-you/">
+                            <img class="media-image" src="https://i.imgur.com/Ay5FeM4.png" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/waterfall-is-that-you/">
+                            <h3 class="media-heading">Waterfall is that you?</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 18, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>IT projects have some similarities with industrial ones like budgets, deadlines but also have its differences like its flowness and unpredictable complexity. Many ways exist today to drive this kind of projects, perhaps the most used one is Waterfall methodology. It has been the standard for managing software development projects since it’s creation in the mid 20th century. However, the outcome was very disappointing.<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/archivator/">
+                            <img class="media-image" src="https://i.imgur.com/Bf3jTsT.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/archivator/">
+                            <h3 class="media-heading">Archivator .. to archive all those old files</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 18, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>Cleaning up old files is an incredebly annoying operation. It’s time consuming and might result into errors due to repeating the same actions all the time. However, it’s necessary to remove old files in order to keep your folder clear and gain free space on your hard disk.<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/agile-management/">
+                            <img class="media-image" src="https://i.imgur.com/3JgBE7A.png" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/06/18/agile-management/">
+                            <h3 class="media-heading">Agile management, it&#39;s all about trust !</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 18, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>Since the beginning of time, hierarchy existed almost everywhere from small families to large companies and even in criminal organizations. Wherever you go, there is someone in charge of taking decisions while others simply execute them. It seems like a proper way to instaure order and move forward. However, i think we haven’t taken a moment to ask ourselves if this is the best way to do so?<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">
+                            <h3 class="media-heading">Tips from an Angular trip - Testing</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jul 17, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>Since Angular’s official release in September 2016, a lot of ink has been spilled over the ground-up rewrite of AngularJS.<br>While the quantity of informations is huge, it seldom addresses tips on how to solve specific problems. This has led me to write this serie of posts about my journey with Angular.<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                9 posts found
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/';
+                 
+                    this.page.identifier = '2017/07/17/TAC-Angular-Testing/';
+                 
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'https-mseknibilel-github-io';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script>
+        var algoliaClient = algoliasearch('UZJJ2LX9YN', 'a28c9ea69fa51acd22ac290a7d750eef');
+        var algoliaIndex = algoliaClient.initIndex('my-hexo-blog');
+    </script>
+
+    </body>
+</html>
