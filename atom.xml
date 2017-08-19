@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mseknibilel.github.io/"/>
-  <updated>2017-08-18T05:56:32.136Z</updated>
+  <updated>2017-08-19T06:10:28.429Z</updated>
   <id>https://mseknibilel.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Tips from an Angular Trip - Smart SEO</title>
+    <title>Tips from an Angular trip - Smart SEO</title>
     <link href="https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/"/>
     <id>https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/</id>
     <published>2017-08-18T05:56:32.000Z</published>
-    <updated>2017-08-18T05:56:32.136Z</updated>
+    <updated>2017-08-19T06:10:28.429Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to another post about my Angular Trip, this time i’ll be covering SEO optimization with Angular apps. If you didn’t read my previous post about testing, you can find it <a href="https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">here</a>.<br><a id="more"></a></p>
 <h1 id="Part-One-Preparing-ground"><a href="#Part-One-Preparing-ground" class="headerlink" title="Part One: Preparing ground"></a>Part One: Preparing ground</h1><p>The source code used in this blog post can be found <a href="https://github.com/mseknibilel/ang-smart-seo" target="_blank" rel="external">here</a>. It was generated using Angular CLI to demonstrate how SEO can be improved within an Angular application. Before we dive into the details of the application, let’s do a quick basics tour.</p>
