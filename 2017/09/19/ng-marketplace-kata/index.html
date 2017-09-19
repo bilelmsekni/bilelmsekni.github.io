@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Random thoughts based on true stories">
-    <title>Tips from an Angular trip - Smart SEO - Random thoughts based on true stories</title>
+    <title>Tips from an Angular Trip - Kata - Random thoughts based on true stories</title>
     <meta name="author" content="Bilel Msekni">
     
     
@@ -15,17 +15,19 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="Welcome to another post about my Angular Trip, this time i’ll be covering SEO optimization with Angular apps. If you didn’t read my previous post about testing, you can find it here.">
-<meta name="keywords" content="Angular,Universal,SEO">
+    <meta name="description" content="To continue our journey with Angular, i created a special kata to help dive deeper in the Angular framework. We will be developing an e-commerce application with two pages but full of special tips and">
+<meta name="keywords" content="Angular,kata">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Tips from an Angular trip - Smart SEO">
-<meta property="og:url" content="https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/index.html">
+<meta property="og:title" content="Tips from an Angular Trip - Kata">
+<meta property="og:url" content="https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/index.html">
 <meta property="og:site_name" content="Random thoughts based on true stories">
-<meta property="og:description" content="Welcome to another post about my Angular Trip, this time i’ll be covering SEO optimization with Angular apps. If you didn’t read my previous post about testing, you can find it here.">
-<meta property="og:updated_time" content="2017-08-19T06:10:28.429Z">
+<meta property="og:description" content="To continue our journey with Angular, i created a special kata to help dive deeper in the Angular framework. We will be developing an e-commerce application with two pages but full of special tips and">
+<meta property="og:image" content="http://i.imgur.com/4XWrp.png">
+<meta property="og:updated_time" content="2017-09-19T05:40:50.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tips from an Angular trip - Smart SEO">
-<meta name="twitter:description" content="Welcome to another post about my Angular Trip, this time i’ll be covering SEO optimization with Angular apps. If you didn’t read my previous post about testing, you can find it here.">
+<meta name="twitter:title" content="Tips from an Angular Trip - Kata">
+<meta name="twitter:description" content="To continue our journey with Angular, i created a special kata to help dive deeper in the Angular framework. We will be developing an e-commerce application with two pages but full of special tips and">
+<meta name="twitter:image" content="http://i.imgur.com/4XWrp.png">
     
     
         
@@ -226,14 +228,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Tips from an Angular trip - Smart SEO
+            Tips from an Angular Trip - Kata
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-08-18T07:56:32+02:00">
+    <time itemprop="datePublished" datetime="2017-09-19T07:40:50+02:00">
 	
-		    Aug 18, 2017
+		    Sep 19, 2017
     	
     </time>
     
@@ -244,54 +246,159 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Welcome to another post about my Angular Trip, this time i’ll be covering SEO optimization with Angular apps. If you didn’t read my previous post about testing, you can find it <a href="https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">here</a>.<br><a id="more"></a></p>
-<h1 id="Part-One-Preparing-ground"><a href="#Part-One-Preparing-ground" class="headerlink" title="Part One: Preparing ground"></a>Part One: Preparing ground</h1><p>The source code used in this blog post can be found <a href="https://github.com/mseknibilel/ang-smart-seo" target="_blank" rel="external">here</a>. It was generated using Angular CLI to demonstrate how SEO can be improved within an Angular application. Before we dive into the details of the application, let’s do a quick basics tour.</p>
-<h2 id="What-is-SEO"><a href="#What-is-SEO" class="headerlink" title="What is SEO ?"></a>What is SEO ?</h2><blockquote><p>Search engine optimization (SEO) is the process of affecting the visibility of a website or a web page in a web search engine’s unpaid results.</p>
-<footer><strong>wikipedia</strong></footer></blockquote>
-<p>In other words, web search engines like Google, Yahoo, … fetch websites metadata using crawlers. Metadata helps search engines understand the content of websites and determine if it matches search queries. The more accurate is the metadata, the better will be the ranking of the website.</p>
-<p>However, Angular is a client side framework which means code executes on the client machine. This is an issue for crawlers because they can’t execute javascript, they can only read, therefore can’t interpret the content of the page which inflics a penalty on the website’s visibility.</p>
-<h2 id="Angular-Universal"><a href="#Angular-Universal" class="headerlink" title="Angular Universal"></a>Angular Universal</h2><p>If Angular can run on the server, search engines will be able to read the metadata and index its content. Fortunatly, this is exaclty what Angular Universal does. Universal was created to make Angular render on the server for faster initial load and enhanced SEO. Starting Angular 4.3, it was integrated in the official ecosystem. Let’s try to understand how it works.</p>
-<h1 id="Part-Two-Setting-up"><a href="#Part-Two-Setting-up" class="headerlink" title="Part Two: Setting up"></a>Part Two: Setting up</h1><p>In a similar approach to client side, Angular is bootstrapped using an AppServerModule which imports the AppModule and ServerModule.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; ServerModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-server'</span>;</div><div class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">'./app/app.component'</span>;</div><div class="line"><span class="keyword">import</span> &#123; AppModule &#125; <span class="keyword">from</span> <span class="string">'./app/app.module'</span>;</div><div class="line">@NgModule(&#123;</div><div class="line">  <span class="attr">imports</span>: [</div><div class="line">          ServerModule,</div><div class="line">          AppModule</div><div class="line">  ],</div><div class="line">  <span class="attr">bootstrap</span>: [</div><div class="line">          AppComponent</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppServerModule</span> </span>&#123;&#125;</div></pre></td></tr></table></figure>
-<p>Notice the ServerModule being imported from the platform-server library, the equivalent of the platform-browser library.</p>
-<p>Server side rendering should only be for the first page, therefore it needs to pass on the torch to the normal execution mode of Angular using the <strong>withServerTransition</strong> method.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@NgModule(&#123;</div><div class="line">  <span class="attr">declarations</span>: [</div><div class="line">    AppComponent</div><div class="line">  ],</div><div class="line">  <span class="attr">imports</span>: [</div><div class="line">    BrowserModule.withServerTransition(&#123;</div><div class="line">        <span class="attr">appId</span>: <span class="string">'smart-ang-seo'</span></div><div class="line">    &#125;),</div></pre></td></tr></table></figure>
-<p>The app is now server side ready but it still missing the server. To create it, an easy option is to use Express server.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'reflect-metadata'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'zone.js/dist/zone-node'</span>;</div><div class="line"><span class="keyword">import</span> &#123; platformServer, renderModuleFactory &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-server'</span></div><div class="line"><span class="keyword">import</span> &#123; enableProdMode &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span></div><div class="line"><span class="keyword">import</span> &#123; AppServerModuleNgFactory &#125; <span class="keyword">from</span> <span class="string">'../dist/ngfactory/src/app/app.server.module.ngfactory'</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> express <span class="keyword">from</span> <span class="string">'express'</span>;</div><div class="line"><span class="keyword">import</span> &#123; readFileSync &#125; <span class="keyword">from</span> <span class="string">'fs'</span>;</div><div class="line"><span class="keyword">import</span> &#123; join &#125; <span class="keyword">from</span> <span class="string">'path'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> PORT = <span class="number">4000</span>;</div><div class="line"></div><div class="line">enableProdMode();</div><div class="line"></div><div class="line"><span class="keyword">const</span> app = express();</div><div class="line"></div><div class="line"><span class="keyword">let</span> template = readFileSync(join(__dirname, <span class="string">'..'</span>, <span class="string">'dist'</span>, <span class="string">'index.html'</span>)).toString();</div><div class="line"></div><div class="line">app.engine(<span class="string">'html'</span>, (_, options, callback) =&gt; &#123;</div><div class="line">  <span class="keyword">const</span> opts = &#123; <span class="attr">document</span>: template, <span class="attr">url</span>: options.req.url &#125;;</div><div class="line"></div><div class="line">  renderModuleFactory(AppServerModuleNgFactory, opts)</div><div class="line">    .then(<span class="function"><span class="params">html</span> =&gt;</span> callback(<span class="literal">null</span>, html));</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'html'</span>);</div><div class="line">app.set(<span class="string">'views'</span>, <span class="string">'src'</span>)</div><div class="line"></div><div class="line">app.get(<span class="string">'*.*'</span>, express.static(join(__dirname, <span class="string">'..'</span>, <span class="string">'dist'</span>)));</div><div class="line"></div><div class="line">app.get(<span class="string">'*'</span>, (req, res) =&gt; &#123;</div><div class="line">  res.render(<span class="string">'index'</span>, &#123; req &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.listen(PORT, () =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">`listening on http://localhost:<span class="subst">$&#123;PORT&#125;</span>!`</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>Express is going to read the content of the index.html and use the renderModuleFactory method imported from the platform-server module to execute the angular app then return the stream as a reponse to the request.<br>Notice that the AppServerModuleNgFactory is generated using the angular compiler.<br>Some adjustments are needed for the compile to work properly:</p>
-<ul>
-<li>Add server.ts to the exclude array in <strong>/src/tsconfig.app.json</strong></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="string">"exclude"</span>: [</div><div class="line">  <span class="string">"server.ts"</span>,</div><div class="line">  <span class="string">"test.ts"</span>,</div><div class="line">  <span class="string">"**/*.spec.ts"</span></div><div class="line">]</div></pre></td></tr></table></figure>
-<ul>
-<li>Add <strong>angularCompilerOptions</strong> to tsconfig.json</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"angularCompilerOptions"</span>: &#123;</div><div class="line">    <span class="string">"genDir"</span>: <span class="string">"./dist/ngfactory"</span>,</div><div class="line">    <span class="string">"entryModule"</span>: <span class="string">"./src/app/app.module#AppModule"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li><p>Finally, use these commands to run the application</p>
-<p>To build the application:</p>
-<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng build --prod &amp; ngc</div></pre></td></tr></table></figure>
-<p>To run the application:</p>
-<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ts-node src/server.ts</div></pre></td></tr></table></figure>
-<p><strong>Hint</strong>: I added an npm task for this:</p>
-<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run universal</div></pre></td></tr></table></figure>
+            <p>To continue our journey with Angular, i created a special kata to help dive deeper in the Angular framework. We will be developing an e-commerce application with two pages but full of special tips and tricks.<br>When finished, the application should look like this: <a href="https://mseknibilel.github.io/ng-marketplace/">Ng-MarketPlace</a><br><a id="more"></a></p>
+<h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><ol>
+<li>Requirements</li>
+<li>Part one: Angular basics</li>
+<li>Part two: Angular advanced</li>
+<li>Licencing and information</li>
+</ol>
+<h1 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h1><p>A first experience with angular is recommended but not required as the kata will slowly progress from the fundamentals to advanced techniques.</p>
+<h2 id="Preparing-the-machine"><a href="#Preparing-the-machine" class="headerlink" title="Preparing the machine"></a>Preparing the machine</h2><ol>
+<li>Make sure you have a running internet connection</li>
+<li><p>Install the lastest <strong>Node LTS</strong> from <a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/</a></p>
 </li>
+<li><p>Verify node installation using the command lines:</p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line"><span class="comment"># should display 6.11.2 or higher</span></div></pre></td></tr></table></figure>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm -v</div><div class="line"><span class="comment"># should display 4.1.1 or higher</span></div></pre></td></tr></table></figure></li>
+<li><em>Optional:</em> use a code editor (<a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> is my recommendation)</li>
+</ol>
+<h1 id="Part-one-Angular-basics"><a href="#Part-one-Angular-basics" class="headerlink" title="Part one: Angular basics"></a>Part one: Angular basics</h1><h2 id="Create-a-new-project-10-min"><a href="#Create-a-new-project-10-min" class="headerlink" title="Create a new project (10 min)"></a>Create a new project (10 min)</h2><ol>
+<li>Install Angular CLI<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g @angular/cli</div></pre></td></tr></table></figure></li>
+<li>Create a new project and name it ng-marketplace<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng new marketplace</div></pre></td></tr></table></figure></li>
+<li>Run the application and navigate to the home page<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng serve</div></pre></td></tr></table></figure></li>
+<li>Modify the title from <code>Welcome to app!</code> to <code>Welcome to MarketPlace</code></li>
+</ol>
+<h2 id="Create-an-items-board-component-30-min"><a href="#Create-an-items-board-component-30-min" class="headerlink" title="Create an items-board component (30 min)"></a>Create an items-board component (30 min)</h2><ol>
+<li>The marketplace has 5 categories of goods, create a new component called items-board to display them all</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Electronics</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Women</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Car</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">Home</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">Books</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Style the page using bootstrap and fontawesome icons</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">name</th>
+<th style="text-align:center">icon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Electronics</td>
+<td style="text-align:center">fa fa-desktop fa-4x</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Women</td>
+<td style="text-align:center">fa fa-female fa-4x</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Car</td>
+<td style="text-align:center">fa fa-car fa-4x</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">Home</td>
+<td style="text-align:center">fa fa-home fa-4x</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">Books</td>
+<td style="text-align:center">fa fa-book fa-4x</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Retrieve data from a remote server instead of hard coding it in the component.</li>
+<li>Move the data retrieving logic to a dedicated service.</li>
+<li>Fix failing tests</li>
+<li>Create the following 3 tests for the ItemsBoardComponent<ul>
+<li>Should create ItemsBoardComponent when everything is ok</li>
+<li>Should create a list of 3 lines when categories count is 3</li>
+<li>Should display second category with id 2 and iconClass tof when second category has id 2 and iconClass tof</li>
 </ul>
-<p>To verify that the application can be server side rendered, deactivate javascript execution in your browser then navigate to <code>http://localhost:4000</code></p>
-<h1 id="Metadata"><a href="#Metadata" class="headerlink" title="Metadata"></a>Metadata</h1><p>Our pages are finally readable by crawlers so it’s time to add metadata. Meta and Title are provided by the platform-browser library. They are used to provide unique details about the content of the page.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private meta: Meta, private title: Title) &#123; &#125;</div><div class="line"></div><div class="line">   ngOnInit() &#123;</div><div class="line">        title.setTitle(<span class="string">'My Home Page'</span>);</div><div class="line"></div><div class="line">        meta.addTags([</div><div class="line">            &#123; <span class="attr">name</span>: <span class="string">'author'</span>, <span class="attr">content</span>: <span class="string">'bms.com'</span> &#125;,</div><div class="line">            &#123; <span class="attr">name</span>: <span class="string">'description'</span>, <span class="attr">content</span>: <span class="string">'this is my home description'</span> &#125;,</div><div class="line">        ]);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Run the app again and you will see meta and title elements in the source code of the page.</p>
-<h1 id="Part-three-Diving-deeper"><a href="#Part-three-Diving-deeper" class="headerlink" title="Part three: Diving deeper"></a>Part three: Diving deeper</h1><p>Because internet trends continually change, we need to update our metadata accordingly to maintain our visibility in search results. Furthermore, sometimes, it’s useful to choose which metadata to return according to the characteristics of the crawler (origin, language, …). For instance, if the crawler defines english as an accept language, it will be interesting to return the english version of the most trending keywords that your website’s content covers.</p>
-<p>Although, it might seems like a tricky task, it’s actually not that complicated.</p>
-<p>First, we need to retrieve information about the crawler and pass it to our Angular app using Express. In <code>server.ts</code>, modify the engine line to extract the <code>accept-language</code> header value from the incoming request:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.engine(<span class="string">'html'</span>, (_, options, callback) =&gt; &#123;</div><div class="line">  <span class="keyword">const</span> opts = &#123; <span class="attr">document</span>: template, <span class="attr">url</span>: options.req.url &#125;;</div><div class="line">  region.ipAdr = options.req.ip;</div><div class="line">  region.lang = options.req.headers[<span class="string">'accept-language'</span>];</div><div class="line">  renderModuleFactory(AppServerModuleNgFactory, opts)</div><div class="line">    .then(<span class="function"><span class="params">html</span> =&gt;</span> callback(<span class="literal">null</span>, html));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>and pass it to angular via an endpoint:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'html'</span>);</div><div class="line">app.set(<span class="string">'views'</span>, <span class="string">'src'</span>);</div><div class="line"></div><div class="line">app.get(<span class="string">'/region'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(region);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.get(<span class="string">'*.*'</span>, express.static(join(__dirname, <span class="string">'..'</span>, <span class="string">'dist'</span>)));</div></pre></td></tr></table></figure>
-<p>Then add a service to handle the choosing of the adequate keywords:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Http, Response &#125; <span class="keyword">from</span> <span class="string">'@angular/http'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Observable &#125; <span class="keyword">from</span> <span class="string">'rxjs/Observable'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'rxjs/add/operator/map'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'rxjs/add/operator/do'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'rxjs/add/operator/switchMap'</span>;</div><div class="line"></div><div class="line">@Injectable()</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">SeoService</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">constructor</span>(private http: Http) &#123; &#125;</div><div class="line"></div><div class="line">    getKeywords(): Observable&lt;string&gt; &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.getRegion()</div><div class="line">            .do(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">console</span>.log(res))</div><div class="line">            .switchMap(<span class="function"><span class="params">res</span> =&gt;</span> <span class="keyword">this</span>.getKeywordsByRegion(res[<span class="number">0</span>]))</div><div class="line">            .do(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">console</span>.log(res))</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    getKeywordsByRegion(arg: string): Observable&lt;string&gt; &#123;</div><div class="line">        <span class="keyword">if</span> (arg === <span class="string">'fr-Fr'</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.http.get(<span class="string">'https://api-adresse.data.gouv.fr/search/?q=eiffel tower'</span>)</div><div class="line">                .map(<span class="function">(<span class="params">res: Response</span>) =&gt;</span> res.json() <span class="keyword">as</span> any)</div><div class="line">                .map(<span class="function"><span class="params">res</span> =&gt;</span> res.query);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.http.get(<span class="string">'https://api-adresse.data.gouv.fr/search/?q=downing street'</span>)</div><div class="line">                .map(<span class="function">(<span class="params">res: Response</span>) =&gt;</span> res.json() <span class="keyword">as</span> any)</div><div class="line">                .map(<span class="function"><span class="params">res</span> =&gt;</span> res.query);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    getRegion(): Observable&lt;string[]&gt; &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.http.get(<span class="string">'http://localhost:4000/region'</span>)</div><div class="line">            .map(<span class="function">(<span class="params">res: Response</span>) =&gt;</span> res.json() <span class="keyword">as</span> any)</div><div class="line">            .map(<span class="function"><span class="params">res</span> =&gt;</span> res.lang.split(<span class="string">';'</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Finally, use the service inside your components:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(private meta: Meta, title: Title, private adrService: SeoService) &#123;</div><div class="line"></div><div class="line">        title.setTitle(<span class="string">'My Home Page'</span>);</div><div class="line"></div><div class="line">        meta.addTags([</div><div class="line">            &#123; <span class="attr">name</span>: <span class="string">'author'</span>, <span class="attr">content</span>: <span class="string">'bms.com'</span> &#125;,</div><div class="line">            &#123; <span class="attr">name</span>: <span class="string">'description'</span>, <span class="attr">content</span>: <span class="string">'this is my home description'</span> &#125;,</div><div class="line">        ]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    ngOnInit() &#123;</div><div class="line">        <span class="keyword">this</span>.adrService.getKeywords()</div><div class="line">            .subscribe(<span class="function"><span class="params">res</span> =&gt;</span> <span class="keyword">this</span>.meta.addTag(&#123; <span class="attr">name</span>: <span class="string">'keywords'</span>, <span class="attr">content</span>: res &#125;));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>That was an easy way to keep your website up to date without a lot of effort but keep in mind that if your pages contain information irrelevant to your metadata, your website will likely be downgraded by search engines.</p>
+</li>
+</ol>
+<h2 id="Setup-purchase-form-30-min"><a href="#Setup-purchase-form-30-min" class="headerlink" title="Setup purchase form (30 min)"></a>Setup purchase form (30 min)</h2><ol>
+<li>Create a form to host the category selection input radio </li>
+<li>Add a selectBox to display category items sorted by price.</li>
+<li>Add selectBox to purchaseForm</li>
+<li>Change the content of items selectBox according the the selected category.</li>
+<li>Fix failing tests and add the following test<ul>
+<li>Should load women items values when user chooses women category</li>
+</ul>
+</li>
+<li>Display the details of the selected item (Description, Price and Picture)</li>
+<li>Add a text box to choose the desired item quantity</li>
+<li>Add a button to submit the selected item and its quantity to cart</li>
+<li>Display the cart items and the total value of the order</li>
+</ol>
+<h2 id="Create-a-billing-form-component-10-min"><a href="#Create-a-billing-form-component-10-min" class="headerlink" title="Create a billing form component (10 min)"></a>Create a billing form component (10 min)</h2><ol>
+<li>Create a new component called BillingFormComponent to display the second page of the application</li>
+<li>Display the second page using the url /billing, first page should be accessible using <em>/marketplace</em> or <em>/</em></li>
+</ol>
+<h1 id="Part-two-Angular-advanced"><a href="#Part-two-Angular-advanced" class="headerlink" title="Part two: Angular advanced"></a>Part two: Angular advanced</h1><h2 id="Dynamic-forms-20-min"><a href="#Dynamic-forms-20-min" class="headerlink" title="Dynamic forms (20 min)"></a>Dynamic forms (20 min)</h2><ol>
+<li><p>Create the billing form using the follwing instructions:</p>
+<ul>
+<li>TextBox for first name</li>
+<li>TextBox for last name</li>
+<li>TextBox for Address<ul>
+<li>Street number: (max 2 number otherwise display an message error</li>
+<li>Street name</li>
+<li>ZipCode: must have 5 numbers otherwise display an error message</li>
+</ul>
+</li>
+<li>Use the DynamicComponentsModule</li>
+</ul>
+</li>
+</ol>
+<h2 id="Feature-module-20-min"><a href="#Feature-module-20-min" class="headerlink" title="Feature module (20 min)"></a>Feature module (20 min)</h2><ol>
+<li>Move the BillingFormComponent component into a feature module called BillingFormModule</li>
+<li>Lazy load the BillingFormModule</li>
+<li>Build the application in AoT mode, fix any errors that might occur.</li>
+</ol>
+<h2 id="Redux-amp-NgRx-30-min"><a href="#Redux-amp-NgRx-30-min" class="headerlink" title="Redux &amp; @NgRx (30 min)"></a>Redux &amp; @NgRx (30 min)</h2><ol>
+<li>Setup a store for the application using @NgRx library</li>
+<li>Adapt the ItemsBoardComponent accordingly to use the store</li>
+<li>Install the <a href="http://extension.remotedev.io/" target="_blank" rel="external">Redux DevTools extension</a> to test time travel debugging and more features</li>
+</ol>
+<h1 id="Licencing-and-information"><a href="#Licencing-and-information" class="headerlink" title="Licencing and information"></a>Licencing and information</h1><p>Ng-MarketPlace Kata is licensed under a Creative Commons Attribution 3.0 Unported License.</p>
+<p><img src="http://i.imgur.com/4XWrp.png" alt="ScreenShot"></p>
+<p>To view a copy of this license, visit [ <a href="http://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank" rel="external">http://creativecommons.org/licenses/by/3.0/deed.en_US</a> ].</p>
+<p>For any questions, contact me on msekni.bilel@gmail.com</p>
 
             
         </div>
@@ -301,7 +408,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Angular/">Angular</a> <a class="tag tag--primary tag--small t-link" href="/tags/SEO/">SEO</a> <a class="tag tag--primary tag--small t-link" href="/tags/Universal/">Universal</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Angular/">Angular</a> <a class="tag tag--primary tag--small t-link" href="/tags/kata/">kata</a>
 
             </div>
         
@@ -311,7 +418,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/09/19/ng-marketplace-kata/"  data-tooltip="Tips from an Angular Trip - Kata">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -319,7 +426,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/17/TAC-Angular-Testing/" data-tooltip="Tips from an Angular trip - Testing">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/08/18/smart-seo-with-angular/" data-tooltip="Tips from an Angular trip - Smart SEO">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -337,7 +444,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -345,7 +452,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -353,7 +460,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -403,7 +510,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/09/19/ng-marketplace-kata/"  data-tooltip="Tips from an Angular Trip - Kata">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -411,7 +518,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/17/TAC-Angular-Testing/" data-tooltip="Tips from an Angular trip - Testing">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/08/18/smart-seo-with-angular/" data-tooltip="Tips from an Angular trip - Smart SEO">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -429,7 +536,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -437,7 +544,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -445,7 +552,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -476,7 +583,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/">
                     <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -484,7 +591,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/">
                     <i class="fa fa-twitter"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -492,7 +599,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/">
                     <i class="fa fa-google-plus"></i><span>Share on Google+</span>
                 </a>
             </li>
@@ -818,9 +925,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/';
+                 this.page.url = 'https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/';
                  
-                    this.page.identifier = '2017/08/18/smart-seo-with-angular/';
+                    this.page.identifier = '2017/09/19/ng-marketplace-kata/';
                  
              };
             (function() {
