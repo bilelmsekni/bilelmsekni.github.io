@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mseknibilel.github.io/"/>
-  <updated>2017-09-19T05:43:21.069Z</updated>
+  <updated>2017-09-23T09:00:48.761Z</updated>
   <id>https://mseknibilel.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/"/>
     <id>https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/</id>
     <published>2017-09-19T05:40:50.000Z</published>
-    <updated>2017-09-19T05:43:21.069Z</updated>
+    <updated>2017-09-23T09:00:48.761Z</updated>
     
     <content type="html"><![CDATA[<p>To continue our journey with Angular, i created a special kata to help dive deeper in the Angular framework. We will be developing an e-commerce application with two pages but full of special tips and tricks.<br>When finished, the application should look like this: <a href="https://mseknibilel.github.io/ng-marketplace/">Ng-MarketPlace</a><br><a id="more"></a></p>
 <h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><ol>
@@ -39,6 +39,14 @@
 <figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm -v</div><div class="line"><span class="comment"># should display 4.1.1 or higher</span></div></pre></td></tr></table></figure></li>
 <li><em>Optional:</em> use a code editor (<a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> is my recommendation)</li>
 </ol>
+<ol>
+<li><em>Optional:</em> add the following extensions to visual studio code</li>
+</ol>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2" target="_blank" rel="external">Angular v4 TypeScript Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=Angular.ng-template" target="_blank" rel="external">Angular Language Service</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint" target="_blank" rel="external">TsLint</a></li>
+</ul>
 <h1 id="Part-one-Angular-basics"><a href="#Part-one-Angular-basics" class="headerlink" title="Part one: Angular basics"></a>Part one: Angular basics</h1><h2 id="Create-a-new-project-10-min"><a href="#Create-a-new-project-10-min" class="headerlink" title="Create a new project (10 min)"></a>Create a new project (10 min)</h2><ol>
 <li>Install Angular CLI<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g @angular/cli</div></pre></td></tr></table></figure></li>
 <li>Create a new project and name it ng-marketplace<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng new marketplace</div></pre></td></tr></table></figure></li>
