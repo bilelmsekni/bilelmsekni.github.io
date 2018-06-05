@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mseknibilel.github.io/"/>
-  <updated>2017-09-23T09:00:48.761Z</updated>
+  <updated>2018-06-05T10:43:49.805Z</updated>
   <id>https://mseknibilel.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/"/>
     <id>https://mseknibilel.github.io/2017/09/19/ng-marketplace-kata/</id>
     <published>2017-09-19T05:40:50.000Z</published>
-    <updated>2017-09-23T09:00:48.761Z</updated>
+    <updated>2018-06-05T10:43:49.805Z</updated>
     
-    <content type="html"><![CDATA[<p>To continue our journey with Angular, i created a special kata to help dive deeper in the Angular framework. We will be developing an e-commerce application with two pages but full of special tips and tricks.<br>When finished, the application should look like this: <a href="https://mseknibilel.github.io/ng-marketplace/">Ng-MarketPlace</a><br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>To continue our journey with Angular, i created a special kata to help dive deeper in the Angular framework. We will be developing an e-commerce application with two pages but full of special tips and tricks.<br>When finished, the application should look like this: <a href="https://mseknibilel.github.io/ng-marketplace/">Ng-MarketPlace</a></p>
+<a id="more"></a>
 <h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><ol>
 <li>Requirements</li>
 <li>Part one: Angular basics</li>
@@ -35,26 +36,29 @@
 <li><p>Install the lastest <strong>Node LTS</strong> from <a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/</a></p>
 </li>
 <li><p>Verify node installation using the command lines:</p>
-<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line"><span class="comment"># should display 6.11.2 or higher</span></div></pre></td></tr></table></figure>
-<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm -v</div><div class="line"><span class="comment"># should display 4.1.1 or higher</span></div></pre></td></tr></table></figure></li>
-<li><em>Optional:</em> use a code editor (<a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> is my recommendation)</li>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line"></div><div class="line"><span class="comment"># should display 8.11.x or higher</span></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm -v</div><div class="line"></div><div class="line"><span class="comment"># should display 5.6.x or higher</span></div><div class="line"></div></pre></td></tr></table></figure>
+</li>
+<li><p><em>Optional:</em> use a code editor (<a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> is my recommendation)</p>
+</li>
 </ol>
-<ol>
-<li><em>Optional:</em> add the following extensions to visual studio code</li>
-</ol>
+<p>5)  <em>Optional:</em> add the following extensions to visual studio code</p>
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2" target="_blank" rel="external">Angular v4 TypeScript Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2" target="_blank" rel="external">Angular TypeScript Snippets</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=Angular.ng-template" target="_blank" rel="external">Angular Language Service</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint" target="_blank" rel="external">TsLint</a></li>
 </ul>
 <h1 id="Part-one-Angular-basics"><a href="#Part-one-Angular-basics" class="headerlink" title="Part one: Angular basics"></a>Part one: Angular basics</h1><h2 id="Create-a-new-project-10-min"><a href="#Create-a-new-project-10-min" class="headerlink" title="Create a new project (10 min)"></a>Create a new project (10 min)</h2><ol>
 <li>Install Angular CLI<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g @angular/cli</div></pre></td></tr></table></figure></li>
-<li>Create a new project and name it ng-marketplace<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng new marketplace</div></pre></td></tr></table></figure></li>
-<li>Run the application and navigate to the home page<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng serve</div></pre></td></tr></table></figure></li>
-<li>Modify the title from <code>Welcome to app!</code> to <code>Welcome to MarketPlace</code></li>
+<li>Create a new project named ng-marketplace (use scss style and mk as prefix)<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng new marketplace --style scss --prefix mk</div></pre></td></tr></table></figure></li>
+<li>Run the application from the marketplace folder<figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng serve</div></pre></td></tr></table></figure></li>
+<li>Modify the title from <code>Welcome to mk!</code> to <code>Welcome to MarketPlace</code></li>
 </ol>
-<h2 id="Create-an-items-board-component-30-min"><a href="#Create-an-items-board-component-30-min" class="headerlink" title="Create an items board component (30 min)"></a>Create an items board component (30 min)</h2><ol>
-<li>The marketplace has 5 categories of goods, create a new component called items-board to display them all</li>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/uXSaK7Z.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
+<h2 id="Create-an-order-form-component-30-min"><a href="#Create-an-order-form-component-30-min" class="headerlink" title="Create an order form component (30 min)"></a>Create an order form component (30 min)</h2><ol>
+<li>The marketplace has 3 categories described below, create a new component called order-form to display them all.</li>
 </ol>
 <table>
 <thead>
@@ -70,24 +74,20 @@
 </tr>
 <tr>
 <td style="text-align:center">2</td>
-<td style="text-align:center">Women</td>
+<td style="text-align:center">Fashion</td>
 </tr>
 <tr>
 <td style="text-align:center">3</td>
 <td style="text-align:center">Car</td>
 </tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">Home</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">Books</td>
-</tr>
 </tbody>
 </table>
+<p><strong>HINT:</strong> Use the order-form.component_1.{html|scss} files from kata/components/order-form.</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/CsY57i3.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
 <ol>
-<li>Style the page using bootstrap and fontawesome icons</li>
+<li>Every category has it’s own logo like described in the table below, Use font awesome classes to decorate them.</li>
 </ol>
 <table>
 <thead>
@@ -105,74 +105,104 @@
 </tr>
 <tr>
 <td style="text-align:center">2</td>
-<td style="text-align:center">Women</td>
-<td style="text-align:center">fa fa-female fa-4x</td>
+<td style="text-align:center">Fashion</td>
+<td style="text-align:center">fa fa-shopping-bag fa-4x</td>
 </tr>
 <tr>
 <td style="text-align:center">3</td>
 <td style="text-align:center">Car</td>
 <td style="text-align:center">fa fa-car fa-4x</td>
 </tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">Home</td>
-<td style="text-align:center">fa fa-home fa-4x</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">Books</td>
-<td style="text-align:center">fa fa-book fa-4x</td>
-</tr>
 </tbody>
 </table>
+<p><strong>HINT:</strong> npm install font-awesome.</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/vl1scLq.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
 <ol>
-<li>Retrieve data from a remote server instead of hard coding it in the component.</li>
-<li>Move the data retrieving logic to a dedicated service.</li>
-<li>Fix failing tests</li>
-<li>Create the following 3 tests for the ItemsBoardComponent<ul>
-<li>Should create ItemsBoardComponent when everything is ok</li>
-<li>Should create a list of 3 lines when categories count is 3</li>
-<li>Should display second category with id 2 and iconClass tof when second category has id 2 and iconClass tof</li>
+<li>The full list of categories is availabe on a remote server. Setup the server then update order-form component to fetch data.</li>
+</ol>
+<p><strong>HINT:</strong> Use kata/api folder as your source of data.</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/bM1KX02.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
+<ol>
+<li>Retrieving data from within a component is not a good practise, move the data fetching logic to a dedicated service.</li>
+<li>Run the tests and fix if any is failing.</li>
+</ol>
+<p><strong>HINT:</strong> Take a look at app.module.ts</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/WTqfZgz.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
+<ol>
+<li>Using the description below, write the following 3 tests for the order-form component<ul>
+<li>Should create OrderFormComponent when all modules and dependencies are available.</li>
+<li>Should create 3 radio buttons when total fetched categories is 3</li>
+<li>Should bind second category id to 2 when fetched second category id equals 2</li>
 </ul>
 </li>
 </ol>
+<p><strong>HINT:</strong> Use a mocking library like sinon: npm install -D sinon @types/sinon.</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/OJtCcuR.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
 <h2 id="Setup-purchase-form-30-min"><a href="#Setup-purchase-form-30-min" class="headerlink" title="Setup purchase form (30 min)"></a>Setup purchase form (30 min)</h2><ol>
-<li>Create a form to host the category selection input radio </li>
-<li>Add a selectBox to display category items sorted by price.</li>
-<li>Add selectBox to purchaseForm</li>
-<li>Change the content of items selectBox according the the selected category.</li>
-<li>Fix failing tests and add the following test<ul>
-<li>Should load women items values when user chooses women category</li>
-</ul>
-</li>
-<li>Display the details of the selected item (Description, Price and Picture)</li>
-<li>Add a text box to choose the desired item quantity</li>
-<li>Add a button to submit the selected item and its quantity to cart</li>
-<li>Display the cart items and the total value of the order</li>
+<li>Create a form to host the category field. Make sure it works by displaying the name of the selected category.</li>
 </ol>
-<h2 id="Create-a-billing-form-component-10-min"><a href="#Create-a-billing-form-component-10-min" class="headerlink" title="Create a billing form component (10 min)"></a>Create a billing form component (10 min)</h2><ol>
-<li>Create a new component called BillingFormComponent to display the second page of the application</li>
-<li>Display the second page using the url /billing, first page should be accessible using <em>/marketplace</em> or <em>/</em></li>
+<p><strong>HINT:</strong> Use reactive forms module: npm install @angular/forms.</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/8NOmAQN.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
+<ol>
+<li>Every category has its corresponding items, display items everytime a category is selected.</li>
 </ol>
-<h1 id="Part-two-Angular-advanced"><a href="#Part-two-Angular-advanced" class="headerlink" title="Part two: Angular advanced"></a>Part two: Angular advanced</h1><h2 id="Dynamic-forms-20-min"><a href="#Dynamic-forms-20-min" class="headerlink" title="Dynamic forms (20 min)"></a>Dynamic forms (20 min)</h2><ol>
-<li><p>Create the billing form using the follwing instructions:</p>
-<ul>
-<li>TextBox for first name</li>
-<li>TextBox for last name</li>
-<li>TextBox for Address<ul>
-<li>Street number: (max 2 number otherwise display an message error</li>
-<li>Street name</li>
-<li>ZipCode: must have 5 numbers otherwise display an error message</li>
-</ul>
-</li>
-<li>Use the DynamicComponentsModule</li>
-</ul>
-</li>
+<p><strong>HINT:</strong> Fetch items from the remote server (api/items.json).</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/lhiP6II.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
+<ol>
+<li>Style the displayed items and add an item field to the form.</li>
+</ol>
+<p><strong>HINT:</strong> Use the html snippet from kata/components/order-form.component_2.html and don’t forget to add images folder to the application.</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/4L6yguY.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
+<ol>
+<li>Display the selected item details using a child component.</li>
+</ol>
+<p><strong>HINT:</strong> Use the selected-item component from kata/components/selected-item.component_1.{html|scss} and don’t forget to display the currency properly.</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/W4OCxjQ.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
+<ol>
+<li>The selected-item component communicates with order-form to add items to its cart. Display the cart items and total value of the order.</li>
+</ol>
+<p><strong>HINT:</strong> The cart is on the order-form component. Use the selected-item component from kata/components/selected-item.component_2.html and kata/components/order-form.component_3.html.</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/u4SnRcR.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
+<h2 id="Create-a-order-summary-component-10-min"><a href="#Create-a-order-summary-component-10-min" class="headerlink" title="Create a order summary component (10 min)"></a>Create a order summary component (10 min)</h2><ol>
+<li>Create a new component called OrderSummary to display the order summary, it’s should be accessible through /summary route.</li>
+</ol>
+<p><strong>HINT:</strong> Use HTML and scss provided in kata/components/order-summary.component.{html|scss} and don’t forget, OrderForm page should remain accessible through <em>/marketplace</em> or <em>/</em>.</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/VtF42a5.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
+<ol>
+<li>OrderSummary should be able to read cart items and display the list of items and total amount of the order</li>
+</ol>
+<p><strong>HINT:</strong> Communication between two routes can be done using shared services.</p>
+<hr>
+<div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/MIbyjT1.png" alt="Expected results"><span class="caption">Expected results</span></div>
+<hr>
+<h1 id="Part-two-Angular-advanced"><a href="#Part-two-Angular-advanced" class="headerlink" title="Part two: Angular advanced"></a>Part two: Angular advanced</h1><h2 id="Route-guards-20-min"><a href="#Route-guards-20-min" class="headerlink" title="Route guards (20 min)"></a>Route guards (20 min)</h2><ol>
+<li>Protect OrderSummary url to prevent user from accessing it before completing the order form</li>
+<li>Categories take a long time to be fetched, display a spinner for the user while waiting on access to order form.</li>
 </ol>
 <h2 id="Feature-module-20-min"><a href="#Feature-module-20-min" class="headerlink" title="Feature module (20 min)"></a>Feature module (20 min)</h2><ol>
-<li>Move the BillingFormComponent component into a feature module called BillingFormModule</li>
-<li>Lazy load the BillingFormModule</li>
-<li>Build the application in AoT mode, fix any errors that might occur.</li>
+<li>Move the OrderSummary component to a feature module called OrderSummary</li>
+<li>Lazy load the OrderSummaryModule</li>
+<li>Build the application in AoT mode then in Prod mode, notice any difference ?</li>
 </ol>
 <h2 id="Redux-amp-NgRx-30-min"><a href="#Redux-amp-NgRx-30-min" class="headerlink" title="Redux &amp; @NgRx (30 min)"></a>Redux &amp; @NgRx (30 min)</h2><ol>
 <li>Setup a store for the application using @NgRx library</li>
@@ -187,7 +217,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;To continue our journey with Angular, i created a special kata to help dive deeper in the Angular framework. We will be developing an e-commerce application with two pages but full of special tips and tricks.&lt;br&gt;When finished, the application should look like this: &lt;a href=&quot;https://mseknibilel.github.io/ng-marketplace/&quot;&gt;Ng-MarketPlace&lt;/a&gt;&lt;br&gt;
+      &lt;p&gt;To continue our journey with Angular, i created a special kata to help dive deeper in the Angular framework. We will be developing an e-commerce application with two pages but full of special tips and tricks.&lt;br&gt;When finished, the application should look like this: &lt;a href=&quot;https://mseknibilel.github.io/ng-marketplace/&quot;&gt;Ng-MarketPlace&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -203,7 +233,7 @@
     <link href="https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/"/>
     <id>https://mseknibilel.github.io/2017/08/18/smart-seo-with-angular/</id>
     <published>2017-08-18T05:56:32.000Z</published>
-    <updated>2017-08-19T06:10:28.429Z</updated>
+    <updated>2017-08-19T06:10:28.430Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to another post about my Angular Trip, this time i’ll be covering SEO optimization with Angular apps. If you didn’t read my previous post about testing, you can find it <a href="https://mseknibilel.github.io/2017/07/17/TAC-Angular-Testing/">here</a>.<br><a id="more"></a></p>
 <h1 id="Part-One-Preparing-ground"><a href="#Part-One-Preparing-ground" class="headerlink" title="Part One: Preparing ground"></a>Part One: Preparing ground</h1><p>The source code used in this blog post can be found <a href="https://github.com/mseknibilel/ang-smart-seo" target="_blank" rel="external">here</a>. It was generated using Angular CLI to demonstrate how SEO can be improved within an Angular application. Before we dive into the details of the application, let’s do a quick basics tour.</p>
@@ -328,7 +358,7 @@
     <link href="https://mseknibilel.github.io/2017/06/18/agile-management/"/>
     <id>https://mseknibilel.github.io/2017/06/18/agile-management/</id>
     <published>2017-06-18T13:08:03.000Z</published>
-    <updated>2017-06-18T13:17:37.445Z</updated>
+    <updated>2017-06-18T13:17:37.446Z</updated>
     
     <content type="html"><![CDATA[<p>Since the beginning of time, hierarchy existed almost everywhere from small families to large companies and even in criminal organizations. Wherever you go, there is someone in charge of taking decisions while others simply execute them. It seems like a proper way to instaure order and move forward. However, i think we haven’t taken a moment to ask ourselves if this is the best way to do so?<br><a id="more"></a><br><div class="figure nocaption center" style="width:;"><img class="fig-img" src="https://i.imgur.com/3JgBE7A.png" alt=""></div></p>
 <p>I believe that great leaders with outstanding vision are a myth. Such burdens of command can’t lie on the shoulders of one human. It’s simply too much even if they have the best management degrees or an impressive charisma. This is probably why some fields tried to solve this issue by following different approaches. For example, in the army, every general has his general staff for advising. In politics, presidency is limited to a couple of years and inside an airplane cockpit, we invented the co-pilot. I’m no expert in these domains so i won’t talk about them but what i would really like to talk about is our software industry.</p>
@@ -419,7 +449,7 @@
     <link href="https://mseknibilel.github.io/2017/06/18/who-is-this-scrum-master/"/>
     <id>https://mseknibilel.github.io/2017/06/18/who-is-this-scrum-master/</id>
     <published>2017-06-18T12:52:25.000Z</published>
-    <updated>2017-06-18T13:18:24.425Z</updated>
+    <updated>2017-06-18T13:18:24.426Z</updated>
     
     <content type="html"><![CDATA[<p>In scrum, only three roles exist: Product owner, Dev team and the scrum master.<br>While the product owner is responsible for driving the project and the dev team is in charge of realizing it, no one really knows exactly what the scrum master’s role is. Is he the one who animates the daily meetings, the poker plannings and retrospectives ? Or may be he is manager of the dev team?<br><a id="more"></a></p>
 <div class="figure nocaption center" style="width:;"><img class="fig-img" src="https://i.imgur.com/lCYMhom.png" alt=""></div>
@@ -452,7 +482,7 @@
     <link href="https://mseknibilel.github.io/2017/06/18/traveler-guide-to-eastern-canada-and-us/"/>
     <id>https://mseknibilel.github.io/2017/06/18/traveler-guide-to-eastern-canada-and-us/</id>
     <published>2017-06-18T12:36:14.000Z</published>
-    <updated>2017-06-18T13:18:49.518Z</updated>
+    <updated>2017-06-18T13:18:49.519Z</updated>
     
     <content type="html"><![CDATA[<p>This guide is destined to help people visit the eastern coasts of Canada and United States. It will cover the following Cities: <strong>Montreal</strong> - <strong>Ottawa</strong> - <strong>Toronto</strong> – <strong>Niagara Falls</strong> (Canadian &amp; US Sides) - <strong>Chicago</strong> - <strong>Miami</strong> - <strong>Washington DC</strong> - <strong>New York</strong>. I will focus more on what you need to bring and how to travel from one place to another. I will only be suggesting how much time to spend in every town but it’s really up to you to choose what to see and do in every town. Finally, this guide is based on my personal experience and I’ll be happy to answer any questions you might have. If you like it, share it!<br><a id="more"></a></p>
 <div class="figure center" style="width:;"><img class="fig-img" src="https://i.imgur.com/smNRznV.jpg" alt="On my road trip ! NiagaraFalls Rainbow Bridge"><span class="caption">On my road trip ! NiagaraFalls Rainbow Bridge</span></div>
@@ -567,7 +597,7 @@
     <link href="https://mseknibilel.github.io/2017/06/18/yet-another-design-pattern/"/>
     <id>https://mseknibilel.github.io/2017/06/18/yet-another-design-pattern/</id>
     <published>2017-06-18T11:57:03.000Z</published>
-    <updated>2017-06-18T13:18:14.276Z</updated>
+    <updated>2017-06-18T13:18:14.277Z</updated>
     
     <content type="html"><![CDATA[<p>It all started with this <a href="https://njimmahdi.blogspot.fr/2014/05/factory-pattern-with-net-technology.html" target="_blank" rel="external">article</a> posted by a good friend of mine about his way of implementing the factory pattern.</p>
 <p>Although there is nothing to approach about his way, something kept itching me to write a second article about another design pattern that might fit in this situation as well.<br><a id="more"></a></p>
